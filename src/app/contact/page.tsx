@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { MapPin, Mail, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with ElevenClicks — London, Ontario's web, mobile, and AI team.",
+    "Get in touch with ElevenClicks — Ontario's web, mobile, and AI team.",
 };
 
 const info = [
@@ -14,22 +14,15 @@ const info = [
     icon: MapPin,
     color: "#4F8EF7",
     label: "Location",
-    value: "London, Ontario, Canada",
+    value: "Ontario, Canada",
     href: null,
   },
   {
     icon: Mail,
     color: "#8B5CF6",
     label: "Email",
-    value: "hello@elevenclicks.com",
-    href: "mailto:hello@elevenclicks.com",
-  },
-  {
-    icon: Phone,
-    color: "#06B6D4",
-    label: "Phone",
-    value: "+1 (519) 123-4567",
-    href: "tel:+15191234567",
+    value: "info@elevenclicks.com",
+    href: "mailto:info@elevenclicks.com",
   },
   {
     icon: Clock,

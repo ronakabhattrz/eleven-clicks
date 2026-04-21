@@ -12,16 +12,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "ElevenClicks | Web, Mobile & AI Solutions — London, Ontario",
+    default: "ElevenClicks | Web, Mobile & AI Solutions — Ontario",
     template: "%s | ElevenClicks",
   },
   description:
-    "ElevenClicks is a London, Ontario IT company delivering cutting-edge web development, Android mobile apps, website maintenance, and AI solutions for businesses across Canada.",
+    "ElevenClicks is a Ontario IT company delivering cutting-edge web development, Android mobile apps, website maintenance, and AI solutions for businesses across Canada.",
   keywords: [
-    "web development London Ontario",
+    "web development Ontario",
     "Android app development Canada",
     "AI solutions Ontario",
-    "IT company London Ontario",
+    "IT company Ontario Canada",
     "website maintenance Canada",
     "ElevenClicks",
   ],
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     siteName: "ElevenClicks",
     title: "ElevenClicks | Web, Mobile & AI Solutions",
     description:
-      "London, Ontario IT company delivering web, mobile, and AI solutions.",
+      "Ontario IT company delivering web, mobile, and AI solutions.",
   },
   twitter: {
     card: "summary_large_image",
     title: "ElevenClicks | Web, Mobile & AI Solutions",
     description:
-      "London, Ontario IT company delivering web, mobile, and AI solutions.",
+      "Ontario IT company delivering web, mobile, and AI solutions.",
   },
 };
 

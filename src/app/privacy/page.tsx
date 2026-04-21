@@ -21,8 +21,8 @@ export default function PrivacyPage() {
       </p>
       <p className="text-white/55 leading-relaxed">
         For questions about this policy, contact us at{" "}
-        <a href="mailto:hello@elevenclicks.com" className="text-[#4F8EF7] hover:underline">
-          hello@elevenclicks.com
+        <a href="mailto:info@elevenclicks.com" className="text-[#4F8EF7] hover:underline">
+          info@elevenclicks.com
         </a>
         .
       </p>

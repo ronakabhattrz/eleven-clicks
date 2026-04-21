@@ -27,7 +27,6 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    phone: "",
     service: "",
     budget: "",
     message: "",
@@ -78,7 +77,7 @@ export default function ContactForm() {
         <button
           onClick={() => {
             setStatus("idle");
-            setForm({ name: "", email: "", phone: "", service: "", budget: "", message: "" });
+            setForm({ name: "", email: "", service: "", budget: "", message: "" });
           }}
           className="mt-2 text-sm text-[#4F8EF7] hover:text-white transition-colors"
         >
@@ -121,39 +120,24 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Phone + Service */}
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-medium text-white/50 mb-1.5">
-            Phone <span className="text-white/25">(optional)</span>
-          </label>
-          <input
-            name="phone"
-            type="tel"
-            value={form.phone}
-            onChange={update}
-            placeholder="+1 (519) 555-0123"
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label className="block text-xs font-medium text-white/50 mb-1.5">
-            Service Interested In
-          </label>
-          <select
-            name="service"
-            value={form.service}
-            onChange={update}
-            className={`${inputClass} appearance-none`}
-          >
-            <option value="" className="bg-[#0D0D1A]">Select a service…</option>
-            {SERVICES.map((s) => (
-              <option key={s} value={s} className="bg-[#0D0D1A]">
-                {s}
-              </option>
-            ))}
-          </select>
-        </div>
+      {/* Service */}
+      <div>
+        <label className="block text-xs font-medium text-white/50 mb-1.5">
+          Service Interested In
+        </label>
+        <select
+          name="service"
+          value={form.service}
+          onChange={update}
+          className={`${inputClass} appearance-none`}
+        >
+          <option value="" className="bg-[#0D0D1A]">Select a service…</option>
+          {SERVICES.map((s) => (
+            <option key={s} value={s} className="bg-[#0D0D1A]">
+              {s}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* Budget */}

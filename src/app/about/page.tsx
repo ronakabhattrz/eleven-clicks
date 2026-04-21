@@ -6,7 +6,7 @@ import { MapPin, ArrowRight, Target, Heart, TrendingUp } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about ElevenClicks — London Ontario's team of web, mobile, and AI experts.",
+    "Learn about ElevenClicks — Ontario's team of web, mobile, and AI experts.",
 };
 
 const team = [
@@ -100,12 +100,12 @@ export default function AboutPage() {
             </h1>
             <p className="text-lg text-white/55 max-w-2xl mx-auto">
               We&apos;re a tight-knit team of engineers, designers, and
-              strategists based in London, Ontario — dedicated to building
+              strategists based in Ontario — dedicated to building
               digital products that actually move the needle for our clients.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 text-sm text-white/60">
               <MapPin className="w-4 h-4 text-[#4F8EF7]" />
-              London, Ontario, Canada
+              Ontario, Canada
             </div>
           </AnimatedSection>
         </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection direction="left">
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Built in London,{" "}
+                Built in Ontario,{" "}
                 <span className="text-gradient">Serving Canada</span>
               </h2>
               <p className="text-white/60 leading-relaxed mb-4">
@@ -127,13 +127,13 @@ export default function AboutPage() {
                 slow turnarounds.
               </p>
               <p className="text-white/60 leading-relaxed mb-4">
-                We started as a small web shop in London and grew by doing great
+                We started as a small web shop in Ontario and grew by doing great
                 work and earning referrals. Today we have a full team of
                 specialists covering web, mobile, AI, design, and
                 infrastructure.
               </p>
               <p className="text-white/60 leading-relaxed">
-                Whether you&apos;re a local London business or a startup scaling
+                Whether you&apos;re a local Ontario business or a startup scaling
                 across Canada, we bring the same energy and expertise to every
                 engagement.
               </p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
                   { value: "2019", label: "Founded" },
                   { value: "50+", label: "Projects" },
                   { value: "6", label: "Team Members" },
-                  { value: "🍁", label: "London, ON" },
+                  { value: "🍁", label: "Ontario, Canada" },
                 ].map((item) => (
                   <div key={item.label} className="text-center">
                     <p className="text-3xl font-bold text-gradient mb-1">

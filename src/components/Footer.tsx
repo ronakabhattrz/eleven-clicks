@@ -31,27 +31,20 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-white/50 leading-relaxed mb-6">
-              London, Ontario&apos;s trusted IT partner — delivering web, mobile,
+              Ontario&apos;s trusted IT partner — delivering web, mobile,
               and AI solutions that move your business forward.
             </p>
             <div className="flex flex-col gap-2 text-sm text-white/40">
               <span className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 shrink-0 text-[#4F8EF7]" />
-                London, Ontario, Canada
+                Ontario, Canada
               </span>
               <a
-                href="mailto:hello@elevenclicks.com"
+                href="mailto:info@elevenclicks.com"
                 className="flex items-center gap-2 hover:text-white/70 transition-colors"
               >
                 <Mail className="w-4 h-4 shrink-0 text-[#8B5CF6]" />
-                hello@elevenclicks.com
-              </a>
-              <a
-                href="tel:+15191234567"
-                className="flex items-center gap-2 hover:text-white/70 transition-colors"
-              >
-                <Phone className="w-4 h-4 shrink-0 text-[#06B6D4]" />
-                +1 (519) 123-4567
+                info@elevenclicks.com
               </a>
             </div>
           </div>
@@ -112,7 +105,7 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
             © {new Date().getFullYear()} ElevenClicks. All rights reserved.
-            London, Ontario, Canada.
+            Ontario, Canada.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-xs text-white/30 hover:text-white/60 transition-colors">

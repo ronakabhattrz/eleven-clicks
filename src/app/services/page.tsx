@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Web development, website maintenance, Android mobile apps, and AI solutions from ElevenClicks — London, Ontario.",
+    "Web development, website maintenance, Android mobile apps, and AI solutions from ElevenClicks — Ontario.",
 };
 
 const services = [

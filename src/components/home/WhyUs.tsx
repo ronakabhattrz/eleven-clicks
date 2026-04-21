@@ -52,7 +52,7 @@ export default function WhyUs() {
             The Team That <span className="text-gradient">Gets It Done</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            London-based, globally capable. We bring enterprise-grade quality to
+            Ontario-based, globally capable. We bring enterprise-grade quality to
             businesses of every size.
           </p>
         </AnimatedSection>

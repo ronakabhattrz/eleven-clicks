@@ -17,6 +17,41 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#4F8EF7]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#8B5CF6]/10 rounded-full blur-[100px] pointer-events-none" />
 
+      {/* Floating cards — anchored to the section (full viewport width) so they never overlap content */}
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.6 }}
+        className="hidden 2xl:block absolute left-8 top-1/2 -translate-y-1/2 glass border border-white/8 rounded-2xl p-4 w-48"
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-8 h-8 rounded-lg bg-[#4F8EF7]/20 flex items-center justify-center text-[#4F8EF7] text-lg">
+            🌐
+          </div>
+          <span className="text-xs font-semibold text-white/80">Web Dev</span>
+        </div>
+        <p className="text-xs text-white/40 leading-relaxed">
+          Modern, fast, and scalable websites built for conversion.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.7 }}
+        className="hidden 2xl:block absolute right-8 top-1/2 -translate-y-1/2 glass border border-white/8 rounded-2xl p-4 w-48"
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/20 flex items-center justify-center text-[#8B5CF6] text-lg">
+            🤖
+          </div>
+          <span className="text-xs font-semibold text-white/80">AI Solutions</span>
+        </div>
+        <p className="text-xs text-white/40 leading-relaxed">
+          Custom AI integrations that automate and accelerate your workflows.
+        </p>
+      </motion.div>
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
@@ -27,7 +62,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/10 text-sm text-white/70 mb-8"
           >
             <MapPin className="w-3.5 h-3.5 text-[#4F8EF7]" />
-            London, Ontario, Canada
+            Ontario, Canada
             <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
           </motion.div>
 
@@ -52,7 +87,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            ElevenClicks is London&apos;s premier IT company. From blazing-fast
+            ElevenClicks is Ontario&apos;s premier IT company. From blazing-fast
             websites and Android apps to intelligent AI solutions — we turn your
             vision into powerful digital products.
           </motion.p>
@@ -103,41 +138,6 @@ export default function Hero() {
             ))}
           </motion.div>
         </div>
-
-        {/* Floating cards */}
-        <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 glass border border-white/8 rounded-2xl p-4 w-52"
-        >
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-[#4F8EF7]/20 flex items-center justify-center text-[#4F8EF7] text-lg">
-              🌐
-            </div>
-            <span className="text-xs font-semibold text-white/80">Web Dev</span>
-          </div>
-          <p className="text-xs text-white/40 leading-relaxed">
-            Modern, fast, and scalable websites built for conversion.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 glass border border-white/8 rounded-2xl p-4 w-52"
-        >
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/20 flex items-center justify-center text-[#8B5CF6] text-lg">
-              🤖
-            </div>
-            <span className="text-xs font-semibold text-white/80">AI Solutions</span>
-          </div>
-          <p className="text-xs text-white/40 leading-relaxed">
-            Custom AI integrations that automate and accelerate your workflows.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
