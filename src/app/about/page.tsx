@@ -4,9 +4,24 @@ import Link from "next/link";
 import { MapPin, ArrowRight, Target, Heart, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Us — Ontario's IT Team",
   description:
-    "Learn about ElevenClicks — Ontario's team of web, mobile, and AI experts.",
+    "Meet the ElevenClicks team — Ontario-based engineers, designers, and strategists building web, mobile, and AI products for Canadian businesses since 2019.",
+  keywords: [
+    "ElevenClicks team",
+    "Ontario IT company",
+    "Canadian web development team",
+    "software engineers Ontario",
+  ],
+  alternates: {
+    canonical: "https://elevenclicks.com/about",
+  },
+  openGraph: {
+    url: "https://elevenclicks.com/about",
+    title: "About ElevenClicks — Ontario's IT Team",
+    description:
+      "Ontario-based engineers, designers, and strategists building web, mobile, and AI products for Canadian businesses since 2019.",
+  },
 };
 
 const team = [

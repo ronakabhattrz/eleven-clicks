@@ -4,9 +4,18 @@ import ContactForm from "@/components/ContactForm";
 import { MapPin, Mail, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Us — Get a Free Quote",
   description:
-    "Get in touch with ElevenClicks — Ontario's web, mobile, and AI team.",
+    "Start your next project with ElevenClicks. Get a free quote for web development, Android apps, website maintenance, or AI solutions. We respond within 1 business day.",
+  alternates: {
+    canonical: "https://elevenclicks.com/contact",
+  },
+  openGraph: {
+    url: "https://elevenclicks.com/contact",
+    title: "Contact ElevenClicks — Get a Free Quote",
+    description:
+      "Reach out to Ontario's trusted IT team. Free quotes for web, mobile, and AI projects. We respond within 1 business day.",
+  },
 };
 
 const info = [

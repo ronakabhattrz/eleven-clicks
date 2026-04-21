@@ -11,9 +11,28 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services — Web, Mobile & AI Development",
   description:
-    "Web development, website maintenance, Android mobile apps, and AI solutions from ElevenClicks — Ontario.",
+    "Web development, Android apps, website maintenance, and custom AI solutions from ElevenClicks — Ontario's full-service IT team. Explore what we build and how we can help your business grow.",
+  keywords: [
+    "web development Ontario",
+    "Android app development Ontario",
+    "website maintenance Canada",
+    "AI solutions Canada",
+    "Next.js development",
+    "Kotlin Android apps",
+    "AI chatbot development",
+    "custom software Ontario",
+  ],
+  alternates: {
+    canonical: "https://elevenclicks.com/services",
+  },
+  openGraph: {
+    url: "https://elevenclicks.com/services",
+    title: "Services — Web, Mobile & AI Development | ElevenClicks",
+    description:
+      "Web development, Android apps, website maintenance, and AI solutions for Canadian businesses. End-to-end digital services from Ontario's trusted IT team.",
+  },
 };
 
 const services = [

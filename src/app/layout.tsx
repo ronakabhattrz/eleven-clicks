@@ -11,34 +11,65 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://elevenclicks.com"),
   title: {
     default: "ElevenClicks | Web, Mobile & AI Solutions — Ontario",
     template: "%s | ElevenClicks",
   },
   description:
-    "ElevenClicks is a Ontario IT company delivering cutting-edge web development, Android mobile apps, website maintenance, and AI solutions for businesses across Canada.",
+    "ElevenClicks is an Ontario IT company delivering web development, Android mobile apps, website maintenance, and AI solutions for businesses across Canada. Based in Ontario — serving clients coast to coast.",
   keywords: [
     "web development Ontario",
+    "web development Canada",
     "Android app development Canada",
     "AI solutions Ontario",
     "IT company Ontario Canada",
     "website maintenance Canada",
+    "custom software development Ontario",
+    "mobile app development Ontario",
+    "AI chatbot development Canada",
     "ElevenClicks",
   ],
-  authors: [{ name: "ElevenClicks" }],
+  authors: [{ name: "ElevenClicks", url: "https://elevenclicks.com" }],
+  creator: "ElevenClicks",
+  publisher: "ElevenClicks",
+  alternates: {
+    canonical: "https://elevenclicks.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_CA",
+    url: "https://elevenclicks.com",
     siteName: "ElevenClicks",
-    title: "ElevenClicks | Web, Mobile & AI Solutions",
+    title: "ElevenClicks | Web, Mobile & AI Solutions — Ontario",
     description:
-      "Ontario IT company delivering web, mobile, and AI solutions.",
+      "Ontario IT company delivering web development, Android apps, and AI solutions for Canadian businesses. Fast, modern, results-focused.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ElevenClicks — Web, Mobile & AI Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ElevenClicks | Web, Mobile & AI Solutions",
     description:
-      "Ontario IT company delivering web, mobile, and AI solutions.",
+      "Ontario IT company delivering web development, Android apps, and AI solutions for Canadian businesses.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -48,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en-CA" className={inter.variable}>
       <body className="bg-[#050510] text-white antialiased">
         <Navbar />
         <main>{children}</main>

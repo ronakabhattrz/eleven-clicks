@@ -1,12 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 
 const WORDS = ["Web Apps", "Mobile Apps", "AI Solutions", "Digital Growth"];
 
 export default function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((i) => (i + 1) % WORDS.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -74,8 +84,19 @@ export default function Hero() {
             className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
           >
             We Build{" "}
-            <span className="text-gradient">
-              {WORDS[0]}
+            <span className="inline-block relative">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={WORDS[wordIndex]}
+                  className="text-gradient inline-block"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                >
+                  {WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
             </span>
             <br />
             That Drive Results
