@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Volumes/Ronak Data/projects/personal/**)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(xargs -0 ls)"
+    ],
+    "additionalDirectories": [
+      "/Volumes/Ronak Data/projects/personal/it-company ",
+      "/Volumes/Ronak Data/projects/personal/it-company /src/app",
+      "/Volumes/Ronak Data/projects/personal/it-company /src/components"
+    ]
+  }
+}
