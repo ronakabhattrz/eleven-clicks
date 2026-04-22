@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     "custom software development Ontario",
     "mobile app development Ontario",
     "AI chatbot development Canada",
+    "Next.js developer Ontario",
+    "React developer Canada",
     "ElevenClicks",
   ],
   authors: [{ name: "ElevenClicks", url: "https://elevenclicks.com" }],
@@ -46,21 +48,12 @@ export const metadata: Metadata = {
     title: "ElevenClicks | Web, Mobile & AI Solutions — Ontario",
     description:
       "Ontario IT company delivering web development, Android apps, and AI solutions for Canadian businesses. Fast, modern, results-focused.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ElevenClicks — Web, Mobile & AI Solutions",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ElevenClicks | Web, Mobile & AI Solutions",
     description:
       "Ontario IT company delivering web development, Android apps, and AI solutions for Canadian businesses.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,

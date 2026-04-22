@@ -8,6 +8,7 @@ import {
   Brain,
   CheckCircle2,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -110,9 +111,63 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "How long does a typical website project take?",
+    a: "Most marketing websites and landing pages are delivered in 2–4 weeks. Larger web apps or e-commerce platforms typically take 6–12 weeks depending on scope. We'll give you a firm timeline in our proposal before any work begins.",
+  },
+  {
+    q: "Do you work with small businesses and startups?",
+    a: "Absolutely. Many of our best clients are early-stage startups and small businesses. We tailor scope and pricing to match your stage and budget — no enterprise bloat.",
+  },
+  {
+    q: "What's included in a website maintenance plan?",
+    a: "Our maintenance plans cover plugin and CMS updates, daily automated backups, security monitoring, uptime checks, and priority support. You can add on performance audits and content updates as needed.",
+  },
+  {
+    q: "Can you build for both Android and iOS?",
+    a: "Yes. We build native Android apps with Kotlin/Jetpack Compose and cross-platform apps with Flutter or React Native that cover both Android and iOS from a single codebase.",
+  },
+  {
+    q: "What AI technologies do you work with?",
+    a: "We integrate with OpenAI (GPT-4o), Anthropic Claude, Google Gemini, and open-source models. We build custom RAG pipelines, fine-tune smaller models, and connect AI to your existing data and tools.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Just reach out via our contact page. We'll schedule a free 30-minute discovery call, learn about your project, and send you a detailed proposal with scope and pricing within 48 hours.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://elevenclicks.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://elevenclicks.com/services" },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-40" />
@@ -202,6 +257,35 @@ export default function ServicesPage() {
               </AnimatedSection>
             );
           })}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-12">
+            <p className="text-sm font-semibold text-[#8B5CF6] uppercase tracking-widest mb-3">
+              FAQ
+            </p>
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Common Questions
+            </h2>
+          </AnimatedSection>
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq, i) => (
+              <AnimatedSection key={i} delay={i * 0.06}>
+                <details className="group glass border border-white/8 rounded-2xl overflow-hidden">
+                  <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-medium text-sm hover:text-white/90 transition-colors">
+                    {faq.q}
+                    <ChevronDown className="w-4 h-4 text-white/40 shrink-0 group-open:rotate-180 transition-transform duration-200" />
+                  </summary>
+                  <div className="px-6 pb-5 text-sm text-white/55 leading-relaxed border-t border-white/5 pt-4">
+                    {faq.a}
+                  </div>
+                </details>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
