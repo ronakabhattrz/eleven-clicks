@@ -14,7 +14,10 @@
       "Bash(cp \"/Volumes/Ronak Data/projects/personal/it-company /favicon.jpg\" \"/Volumes/Ronak Data/projects/personal/it-company /public/favicon.jpg\")",
       "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /logo.jpg\")",
       "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /menu-logo.png\")",
-      "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /favicon.jpg\")"
+      "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /favicon.jpg\")",
+      "Bash(npx tsc *)",
+      "Bash(rm -rf .next)",
+      "Bash(npx next *)"
     ],
     "additionalDirectories": [
       "/Volumes/Ronak Data/projects/personal/it-company ",

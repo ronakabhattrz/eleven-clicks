@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 
 const stats = [
-  { value: "50+", label: "Projects Delivered" },
+  { value: "50+",  label: "Projects Delivered" },
+  { value: "19+",  label: "Five-Star Reviews" },
+  { value: "5+",   label: "Years Experience" },
   { value: "100%", label: "Client Satisfaction" },
-  { value: "5+", label: "Years Experience" },
-  { value: "24/7", label: "Support Available" },
 ];
 
 export default function Stats() {

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Star, CheckCircle2 } from "lucide-react";
 
 const WORDS = ["Web Apps", "Mobile Apps", "AI Solutions", "Digital Growth"];
 
@@ -64,16 +64,26 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-28 pb-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+          {/* Trust badges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/10 text-sm text-white/70 mb-8"
+            className="flex flex-wrap items-center justify-center gap-2 mb-8"
           >
-            <MapPin className="w-3.5 h-3.5 text-[#4F8EF7]" />
-            Ontario, Canada
-            <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/10 text-sm text-white/65">
+              <MapPin className="w-3.5 h-3.5 text-[#4F8EF7]" />
+              Ontario, Canada
+              <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full glass border border-white/10 text-sm text-white/65">
+              <Star className="w-3.5 h-3.5 text-[#F59E0B] fill-[#F59E0B]" />
+              19+ Five-Star Reviews
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full glass border border-white/10 text-sm text-white/65">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
+              Trusted Since 2019
+            </span>
           </motion.div>
 
           {/* Heading */}
@@ -143,12 +153,14 @@ export default function Hero() {
             className="mt-16 flex flex-wrap justify-center gap-3"
           >
             {[
-              "Web Development",
-              "Website Maintenance",
+              "Next.js / React",
+              "Ruby on Rails",
+              "Node.js",
+              "Python / Django",
               "Android Apps",
-              "AI Solutions",
+              "AI Integration",
+              "Website Maintenance",
               "UI/UX Design",
-              "API Integrations",
             ].map((tag) => (
               <span
                 key={tag}

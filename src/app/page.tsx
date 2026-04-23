@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import Stats from "@/components/home/Stats";
+import TechStack from "@/components/home/TechStack";
 import WhyUs from "@/components/home/WhyUs";
 import Process from "@/components/home/Process";
 import Testimonials from "@/components/home/Testimonials";
@@ -52,7 +53,7 @@ const organizationSchema = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5",
-    reviewCount: "3",
+    reviewCount: "19",
     bestRating: "5",
     worstRating: "1",
   },
@@ -80,14 +81,12 @@ const organizationSchema = {
     },
   ],
   knowsAbout: [
-    "Next.js",
-    "React",
-    "Android Development",
-    "Kotlin",
-    "AI Integration",
-    "OpenAI",
-    "Claude",
-    "Web Performance",
+    "Next.js", "React", "TypeScript",
+    "Ruby on Rails", "Node.js", "Python", "Django", "FastAPI",
+    "Android Development", "Kotlin", "Flutter", "React Native",
+    "AI Integration", "OpenAI", "Claude", "Gemini",
+    "PostgreSQL", "AWS", "Stripe", "GraphQL",
+    "Web Performance", "UI/UX Design",
   ],
   sameAs: [],
 };
@@ -117,6 +116,7 @@ export default function HomePage() {
       <Hero />
       <ServicesPreview />
       <Stats />
+      <TechStack />
       <WhyUs />
       <Process />
       <Testimonials />

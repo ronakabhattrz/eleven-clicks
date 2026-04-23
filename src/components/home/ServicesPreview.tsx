@@ -1,6 +1,6 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
-import { Globe, Wrench, Smartphone, Brain, ArrowRight } from "lucide-react";
+import { Globe, Wrench, Smartphone, Brain, Code2, Terminal, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -12,12 +12,20 @@ const services = [
     href: "/services#web",
   },
   {
-    icon: Wrench,
-    color: "#06B6D4",
-    bg: "rgba(6,182,212,0.1)",
-    title: "Website Maintenance",
-    desc: "Keep your site fast, secure, and up-to-date with our proactive maintenance plans. We handle updates, backups, and support.",
-    href: "/services#maintenance",
+    icon: Code2,
+    color: "#E53E3E",
+    bg: "rgba(229,62,62,0.1)",
+    title: "Ruby on Rails",
+    desc: "Battle-tested Rails apps, APIs, and CMS platforms. Rails 6, 7 & 8 — from greenfield builds to legacy upgrades.",
+    href: "/services#rails",
+  },
+  {
+    icon: Terminal,
+    color: "#68A063",
+    bg: "rgba(104,160,99,0.1)",
+    title: "Node.js & Python",
+    desc: "Scalable backends, REST & GraphQL APIs, data pipelines, and automation scripts using Node.js, Python, Django, and FastAPI.",
+    href: "/services#nodejs",
   },
   {
     icon: Smartphone,
@@ -34,6 +42,14 @@ const services = [
     title: "AI Solutions",
     desc: "Custom AI integrations — chatbots, automation, data analysis, and intelligent workflows that save time and reduce costs.",
     href: "/services#ai",
+  },
+  {
+    icon: Wrench,
+    color: "#06B6D4",
+    bg: "rgba(6,182,212,0.1)",
+    title: "Website Maintenance",
+    desc: "Keep your site fast, secure, and up-to-date with our proactive maintenance plans. We handle updates, backups, and support.",
+    href: "/services#maintenance",
   },
 ];
 
@@ -54,7 +70,7 @@ export default function ServicesPreview() {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (

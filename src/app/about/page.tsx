@@ -6,7 +6,7 @@ import { MapPin, ArrowRight, Target, Heart, TrendingUp } from "lucide-react";
 export const metadata: Metadata = {
   title: "About Us — Ontario's IT Team",
   description:
-    "Meet the ElevenClicks team — Ontario-based engineers, designers, and strategists building web, mobile, and AI products for Canadian businesses since 2019.",
+    "ElevenClicks is an Ontario-based IT company building web, mobile, and AI products for Canadian businesses since 2019. Learn about our story, values, and approach.",
   keywords: [
     "ElevenClicks team",
     "Ontario IT company",
@@ -23,57 +23,6 @@ export const metadata: Metadata = {
       "Ontario-based engineers, designers, and strategists building web, mobile, and AI products for Canadian businesses since 2019.",
   },
 };
-
-const team = [
-  {
-    name: "Alex Rivera",
-    role: "Founder & Lead Developer",
-    skills: ["Full-Stack", "Architecture", "DevOps"],
-    gradient: "from-[#4F8EF7] to-[#06B6D4]",
-    initials: "AR",
-    bio: "10+ years building scalable web platforms. Former senior engineer at a Toronto fintech. Obsessed with developer experience and clean code.",
-  },
-  {
-    name: "Maya Patel",
-    role: "Android Lead",
-    skills: ["Kotlin", "Jetpack Compose", "Flutter"],
-    gradient: "from-[#8B5CF6] to-[#EC4899]",
-    initials: "MP",
-    bio: "7 years shipping Android apps with millions of downloads. Brings deep knowledge of Google's ecosystem and a user-first design philosophy.",
-  },
-  {
-    name: "James Thornton",
-    role: "AI & Backend Engineer",
-    skills: ["Python", "LLMs", "Data Pipelines"],
-    gradient: "from-[#EC4899] to-[#F59E0B]",
-    initials: "JT",
-    bio: "ML engineer background with hands-on experience integrating OpenAI, Claude, and custom fine-tuned models into real business workflows.",
-  },
-  {
-    name: "Sofia Nguyen",
-    role: "UI/UX Designer",
-    skills: ["Figma", "Design Systems", "Prototyping"],
-    gradient: "from-[#10B981] to-[#06B6D4]",
-    initials: "SN",
-    bio: "Award-winning designer focused on intuitive digital experiences. Has worked with 30+ brands to craft interfaces that convert and delight.",
-  },
-  {
-    name: "Chris Nakamura",
-    role: "Project Manager",
-    skills: ["Agile", "Client Relations", "QA"],
-    gradient: "from-[#F59E0B] to-[#4F8EF7]",
-    initials: "CN",
-    bio: "Keeps every project on time and every client informed. PMP certified with a background in startup operations and product management.",
-  },
-  {
-    name: "Leila Hassan",
-    role: "Backend & DevOps",
-    skills: ["Node.js", "AWS", "CI/CD"],
-    gradient: "from-[#06B6D4] to-[#8B5CF6]",
-    initials: "LH",
-    bio: "Infrastructure expert who loves automation. Builds secure, scalable cloud architectures that handle traffic spikes with zero downtime.",
-  },
-];
 
 const values = [
   {
@@ -204,56 +153,6 @@ export default function AboutPage() {
                 </AnimatedSection>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-12">
-            <p className="text-sm font-semibold text-[#8B5CF6] uppercase tracking-widest mb-3">
-              The Team
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              Meet the Experts Behind{" "}
-              <span className="text-gradient">Your Projects</span>
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map((member, i) => (
-              <AnimatedSection key={member.name} delay={i * 0.08}>
-                <div className="glass border border-white/8 rounded-2xl p-6 hover:border-white/15 transition-all duration-300 h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white font-bold text-lg shrink-0`}
-                    >
-                      {member.initials}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-white text-base">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs text-white/45">{member.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/55 leading-relaxed mb-4">
-                    {member.bio}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {member.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-2.5 py-1 rounded-full text-xs font-medium glass border border-white/8 text-white/60"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>
