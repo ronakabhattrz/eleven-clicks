@@ -4,7 +4,17 @@
       "Read(//Volumes/Ronak Data/projects/personal/**)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(xargs -0 ls)"
+      "Bash(xargs -0 ls)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(unzip -o \"favicon-for-app.zip\" -d \"src/app/\")",
+      "Bash(unzip -o \"favicon-for-public.zip\" -d \"public/\")",
+      "Bash(cp \"/Volumes/Ronak Data/projects/personal/it-company /logo.jpg\" \"/Volumes/Ronak Data/projects/personal/it-company /public/logo.jpg\")",
+      "Bash(cp \"/Volumes/Ronak Data/projects/personal/it-company /favicon.jpg\" \"/Volumes/Ronak Data/projects/personal/it-company /public/favicon.jpg\")",
+      "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /logo.jpg\")",
+      "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /menu-logo.png\")",
+      "Bash(rm \"/Volumes/Ronak Data/projects/personal/it-company /favicon.jpg\")"
     ],
     "additionalDirectories": [
       "/Volumes/Ronak Data/projects/personal/it-company ",

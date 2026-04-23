@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 
 const links = [
@@ -37,13 +38,15 @@ export default function Navbar() {
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#4F8EF7] to-[#8B5CF6] flex items-center justify-center">
-            <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-          </div>
-          <span className="font-bold text-lg tracking-tight">
-            Eleven<span className="text-gradient">Clicks</span>
-          </span>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/menu-logo.png"
+            alt="ElevenClicks"
+            width={160}
+            height={40}
+            className="object-contain h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
