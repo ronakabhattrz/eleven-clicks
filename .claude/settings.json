@@ -22,7 +22,8 @@
     "additionalDirectories": [
       "/Volumes/Ronak Data/projects/personal/it-company ",
       "/Volumes/Ronak Data/projects/personal/it-company /src/app",
-      "/Volumes/Ronak Data/projects/personal/it-company /src/components"
+      "/Volumes/Ronak Data/projects/personal/it-company /src/components",
+      "/Volumes/Ronak Data/projects/personal/it-company /.next"
     ]
   }
 }
