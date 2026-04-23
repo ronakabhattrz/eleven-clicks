@@ -39,9 +39,6 @@ export const metadata: Metadata = {
   authors: [{ name: "ElevenClicks", url: "https://elevenclicks.com" }],
   creator: "ElevenClicks",
   publisher: "ElevenClicks",
-  alternates: {
-    canonical: "https://elevenclicks.com",
-  },
   openGraph: {
     type: "website",
     locale: "en_CA",
