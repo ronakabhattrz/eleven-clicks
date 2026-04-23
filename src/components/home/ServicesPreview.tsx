@@ -62,11 +62,11 @@ export default function ServicesPreview() {
             What We Do
           </p>
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Services Built for{" "}
-            <span className="text-gradient">Modern Business</span>
+            Ruby on Rails, Node.js, Web &{" "}
+            <span className="text-gradient">Mobile App Services</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            End-to-end digital solutions — from idea to launch and beyond.
+            Full-stack Ruby on Rails, Node.js, Python, React, and Android solutions — from idea to launch and beyond.
           </p>
         </AnimatedSection>
 

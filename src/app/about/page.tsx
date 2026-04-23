@@ -4,9 +4,9 @@ import Link from "next/link";
 import { MapPin, ArrowRight, Target, Heart, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — Ontario's IT Team",
+  title: "About ElevenClicks — Ruby on Rails & Web Development Team, Ontario",
   description:
-    "ElevenClicks is an Ontario-based IT company building web, mobile, and AI products for Canadian businesses since 2019. Learn about our story, values, and approach.",
+    "ElevenClicks is an Ontario IT company specialising in Ruby on Rails, Node.js, Python, React, and Android app development for Canadian businesses since 2019.",
   keywords: [
     "ElevenClicks team",
     "Ontario IT company",

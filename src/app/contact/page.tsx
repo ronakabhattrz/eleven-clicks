@@ -6,7 +6,7 @@ import { MapPin, Mail, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us — Get a Free Quote",
   description:
-    "Start your next project with ElevenClicks. Get a free quote for web development, Android apps, website maintenance, or AI solutions. We respond within 1 business day.",
+    "Start your next project with ElevenClicks. Get a free quote for Ruby on Rails, Node.js, Python, React web apps, Android mobile apps, or AI solutions. We respond within 1 business day.",
   alternates: {
     canonical: "https://elevenclicks.com/contact",
   },

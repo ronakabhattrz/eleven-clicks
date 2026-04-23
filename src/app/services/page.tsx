@@ -13,9 +13,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services — Web, Mobile & AI Development",
+  title: "Services — Ruby on Rails, Node.js, Python, Web & Mobile Apps",
   description:
-    "Web development, Android apps, website maintenance, and custom AI solutions from ElevenClicks — Ontario's full-service IT team. Explore what we build and how we can help your business grow.",
+    "Ruby on Rails development, Node.js & Python backends, React web apps, Android mobile apps, website maintenance, and custom AI solutions — ElevenClicks, Ontario's full-service IT team.",
   keywords: [
     "web development Ontario",
     "Android app development Ontario",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "https://elevenclicks.com/services",
-    title: "Services — Web, Mobile & AI Development | ElevenClicks",
+    title: "Services — Ruby on Rails, Node.js, Python, Web & Mobile | ElevenClicks",
     description:
-      "Web development, Android apps, website maintenance, and AI solutions for Canadian businesses. End-to-end digital services from Ontario's trusted IT team.",
+      "Ruby on Rails, Node.js, Python, React web apps, Android mobile apps, and AI solutions for Canadian businesses. End-to-end digital services from Ontario's trusted IT team.",
   },
 };
 
@@ -240,12 +240,11 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Everything You Need to{" "}
-              <span className="text-gradient">Succeed Online</span>
+              Ruby on Rails, Node.js, Web &{" "}
+              <span className="text-gradient">Mobile App Solutions</span>
             </h1>
             <p className="text-lg text-white/55 max-w-2xl mx-auto">
-              End-to-end digital services designed for Canadian businesses ready
-              to grow — delivered by a team that cares about your results.
+              Full-stack Ruby on Rails, Node.js, Python, React, and Android apps — end-to-end digital services built for Canadian businesses ready to grow.
             </p>
           </AnimatedSection>
         </div>

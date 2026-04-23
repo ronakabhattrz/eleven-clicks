@@ -15,23 +15,25 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://elevenclicks.com"),
   title: {
-    default: "ElevenClicks | Web, Mobile & AI Solutions — Ontario",
+    default: "ElevenClicks | Ruby on Rails, Node.js, Web & AI Solutions — Ontario",
     template: "%s | ElevenClicks",
   },
   description:
-    "ElevenClicks is an Ontario IT company delivering web development, Android mobile apps, website maintenance, and AI solutions for businesses across Canada. Based in Ontario — serving clients coast to coast.",
+    "ElevenClicks is an Ontario IT company delivering Ruby on Rails apps, Node.js & Python backends, React web development, Android mobile apps, and custom AI solutions for Canadian businesses.",
   keywords: [
+    "Ruby on Rails developer Ontario",
+    "Ruby on Rails development Canada",
+    "Node.js developer Ontario",
+    "Python developer Canada",
     "web development Ontario",
-    "web development Canada",
     "Android app development Canada",
     "AI solutions Ontario",
     "IT company Ontario Canada",
     "website maintenance Canada",
+    "React Next.js developer Ontario",
     "custom software development Ontario",
     "mobile app development Ontario",
     "AI chatbot development Canada",
-    "Next.js developer Ontario",
-    "React developer Canada",
     "ElevenClicks",
   ],
   authors: [{ name: "ElevenClicks", url: "https://elevenclicks.com" }],
@@ -45,9 +47,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://elevenclicks.com",
     siteName: "ElevenClicks",
-    title: "ElevenClicks | Web, Mobile & AI Solutions — Ontario",
+    title: "ElevenClicks | Ruby on Rails, Node.js, Web & AI Solutions — Ontario",
     description:
-      "Ontario IT company delivering web development, Android apps, and AI solutions for Canadian businesses. Fast, modern, results-focused.",
+      "Ontario IT company delivering Ruby on Rails, Node.js, Python, React web apps, Android mobile apps, and AI solutions for Canadian businesses.",
   },
   twitter: {
     card: "summary_large_image",

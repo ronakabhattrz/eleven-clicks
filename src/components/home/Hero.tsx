@@ -118,9 +118,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            ElevenClicks is Ontario&apos;s premier IT company. From blazing-fast
-            websites and Android apps to intelligent AI solutions — we turn your
-            vision into powerful digital products.
+            Ontario&apos;s trusted IT company — building Ruby on Rails apps, Node.js &amp; Python backends, React websites, Android mobile apps, and custom AI solutions that drive real business results.
           </motion.p>
 
           {/* CTAs */}
