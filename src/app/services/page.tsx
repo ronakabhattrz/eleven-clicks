@@ -15,14 +15,17 @@ import {
 export const metadata: Metadata = {
   title: "Services — Ruby on Rails, Node.js, Python, Web & Mobile Apps",
   description:
-    "Ruby on Rails development, Node.js & Python backends, React web apps, Android mobile apps, website maintenance, and custom AI solutions — ElevenClicks, Ontario's full-service IT team.",
+    "Ruby on Rails development, Node.js & Python backends, React web apps, Android & iOS mobile apps, Flutter development, website maintenance, and custom AI solutions — ElevenClicks, Ontario's full-service IT team.",
   keywords: [
     "web development Ontario",
     "Android app development Ontario",
+    "iOS app development Ontario",
+    "Flutter app development Canada",
     "website maintenance Canada",
     "AI solutions Canada",
     "Next.js development",
     "Kotlin Android apps",
+    "Swift iOS development",
     "AI chatbot development",
     "custom software Ontario",
     "Ruby on Rails development",
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     url: "https://elevenclicks.com/services",
     title: "Services — Ruby on Rails, Node.js, Python, Web & Mobile | ElevenClicks",
     description:
-      "Ruby on Rails, Node.js, Python, React web apps, Android mobile apps, and AI solutions for Canadian businesses. End-to-end digital services from Ontario's trusted IT team.",
+      "Ruby on Rails, Node.js, Python, React web apps, Android & iOS mobile apps, Flutter development, and AI solutions for Canadian businesses. End-to-end digital services from Ontario's trusted IT team.",
   },
 };
 
@@ -83,16 +86,16 @@ const services = [
     color: "#8B5CF6",
     bg: "rgba(139,92,246,0.08)",
     border: "rgba(139,92,246,0.2)",
-    tag: "Android Mobile Apps",
-    title: "Native & Cross-Platform Android Applications",
-    desc: "We build beautiful, performant Android apps that users actually enjoy using. Whether it's a companion app for your service or a standalone product, we handle everything from architecture to Play Store submission.",
+    tag: "Mobile App Development",
+    title: "Android, iOS & Flutter Applications",
+    desc: "We build beautiful, performant mobile apps across Android, iOS, and Flutter. Whether it's a companion app for your service or a standalone product, we handle everything from architecture to app store submission.",
     features: [
       "Native Android (Kotlin / Jetpack Compose)",
-      "Cross-platform with Flutter / React Native",
-      "Google Play Store submission & ASO",
+      "Native iOS (Swift / SwiftUI)",
+      "Cross-platform Flutter (Android + iOS)",
+      "Google Play Store & Apple App Store submission",
       "Push notifications & offline support",
       "Firebase & cloud backend integrations",
-      "Ongoing app maintenance & updates",
     ],
   },
   {
@@ -220,6 +223,8 @@ const breadcrumbSchema = {
 };
 
 export default function ServicesPage() {
+  const total = services.length;
+
   return (
     <>
       <script
@@ -231,103 +236,301 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 dot-grid opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#050510]" />
+        <div
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(79,142,247,0.5) 0%, rgba(139,92,246,0.3) 40%, transparent 70%)",
+          }}
+        />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <p className="text-sm font-semibold text-[#4F8EF7] uppercase tracking-widest mb-3">
-              Our Services
-            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs font-semibold uppercase tracking-widest text-[#4F8EF7] mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4F8EF7] animate-pulse" />
+              Our Services · {total} Specialties
+            </div>
             <h1 className="text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Ruby on Rails, Node.js, Web &{" "}
               <span className="text-gradient">Mobile App Solutions</span>
             </h1>
-            <p className="text-lg text-white/55 max-w-2xl mx-auto">
-              Full-stack Ruby on Rails, Node.js, Python, React, and Android apps — end-to-end digital services built for Canadian businesses ready to grow.
+            <p className="text-lg text-white/55 max-w-2xl mx-auto mb-10">
+              Full-stack Ruby on Rails, Node.js, Python, React, Android, iOS & Flutter apps — end-to-end digital services built for Canadian businesses ready to grow.
             </p>
+          </AnimatedSection>
+
+          {/* Service Index Chips */}
+          <AnimatedSection delay={0.1}>
+            <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+              {services.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.id}
+                    href={`#${s.id}`}
+                    className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 hover:-translate-y-0.5"
+                    style={{
+                      background: s.bg,
+                      borderColor: s.border,
+                      color: s.color,
+                    }}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                    {s.tag}
+                  </a>
+                );
+              })}
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-12">
-          {services.map((s, i) => {
-            const Icon = s.icon;
-            const isEven = i % 2 === 0;
-            return (
-              <AnimatedSection key={s.id} delay={0.1}>
-                <div
-                  id={s.id}
-                  className="scroll-mt-24 glass rounded-3xl border p-8 lg:p-12"
-                  style={{ borderColor: s.border }}
-                >
+      {/* Services — Timeline / Spine Layout */}
+      <section className="pb-24 relative">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="relative">
+            {/* Central spine line (mobile: left, desktop: center) */}
+            <div
+              className="absolute top-0 bottom-0 w-px left-6 lg:left-1/2 lg:-translate-x-1/2 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(180deg, transparent 0%, rgba(79,142,247,0.4) 10%, rgba(139,92,246,0.4) 35%, rgba(236,72,153,0.4) 60%, rgba(6,182,212,0.4) 85%, transparent 100%)",
+              }}
+            />
+
+            <div className="flex flex-col gap-16 lg:gap-24">
+              {services.map((s, i) => {
+                const Icon = s.icon;
+                const index = String(i + 1).padStart(2, "0");
+                const isLeft = i % 2 === 0;
+                return (
                   <div
-                    className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-start`}
+                    key={s.id}
+                    id={s.id}
+                    className="relative scroll-mt-24"
                   >
-                    {/* Left/Right text */}
-                    <div className="flex-1 min-w-0">
-                      <div
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5"
-                        style={{ background: s.bg, color: s.color }}
-                      >
-                        <Icon className="w-3.5 h-3.5" />
-                        {s.tag}
+                    {/* Spine node (pulsing dot) */}
+                    <div className="absolute left-6 lg:left-1/2 top-6 -translate-x-1/2 z-20">
+                      <div className="relative">
+                        <div
+                          className="absolute inset-0 rounded-full blur-md animate-pulse"
+                          style={{ background: s.color, opacity: 0.6 }}
+                        />
+                        <div
+                          className="relative w-4 h-4 rounded-full border-2 border-[#050510]"
+                          style={{
+                            background: s.color,
+                            boxShadow: `0 0 20px ${s.color}, 0 0 40px ${s.color}66`,
+                          }}
+                        />
                       </div>
-                      <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
-                        {s.title}
-                      </h2>
-                      <p className="text-white/55 leading-relaxed mb-8">
-                        {s.desc}
-                      </p>
-                      <Link
-                        href="/contact"
-                        className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-200"
-                        style={{
-                          background: `linear-gradient(135deg, ${s.color}cc, ${s.color}88)`,
-                        }}
-                      >
-                        Get Started
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
                     </div>
 
-                    {/* Features list */}
+                    {/* Index label on spine (desktop only, positioned above node) */}
+                    <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 -top-4 z-10">
+                      <span
+                        className="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold tracking-widest border"
+                        style={{
+                          background: "#050510",
+                          color: s.color,
+                          borderColor: s.border,
+                        }}
+                      >
+                        {index}
+                      </span>
+                    </div>
+
+                    {/* Card wrapper — alternating sides on desktop */}
                     <div
-                      className="flex-1 rounded-2xl p-6"
-                      style={{ background: s.bg }}
+                      className={`pl-16 lg:pl-0 lg:w-1/2 ${
+                        isLeft ? "lg:pr-14" : "lg:ml-auto lg:pl-14"
+                      }`}
                     >
-                      <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: s.color }}>
-                        What&apos;s Included
-                      </p>
-                      <ul className="flex flex-col gap-3">
-                        {s.features.map((f) => (
-                          <li key={f} className="flex items-start gap-3 text-sm text-white/70">
-                            <CheckCircle2
-                              className="w-4 h-4 mt-0.5 shrink-0"
-                              style={{ color: s.color }}
+                      {/* Connector arm from spine to card (desktop only) */}
+                      <div
+                        className={`hidden lg:block absolute top-8 h-px w-12 ${
+                          isLeft ? "right-1/2 mr-2" : "left-1/2 ml-2"
+                        }`}
+                        style={{
+                          background: `linear-gradient(${isLeft ? "270deg" : "90deg"}, ${s.color}, transparent)`,
+                        }}
+                      />
+
+                      <AnimatedSection delay={0.05}>
+                        <article
+                          className="group relative glass rounded-3xl border overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                          style={{ borderColor: s.border }}
+                        >
+                          {/* Top gradient accent */}
+                          <div
+                            className="absolute top-0 left-0 right-0 h-0.5"
+                            style={{
+                              background: `linear-gradient(90deg, ${s.color}, transparent 70%)`,
+                            }}
+                          />
+
+                          {/* Giant number watermark */}
+                          <div
+                            aria-hidden
+                            className="pointer-events-none absolute -top-2 -right-2 text-[9rem] font-black leading-none select-none"
+                            style={{ color: s.color, opacity: 0.07 }}
+                          >
+                            {index}
+                          </div>
+
+                          {/* Corner glow */}
+                          <div
+                            className="pointer-events-none absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-3xl opacity-30 transition-opacity duration-500 group-hover:opacity-60"
+                            style={{
+                              background: `radial-gradient(circle, ${s.color}, transparent 70%)`,
+                            }}
+                          />
+
+                          {/* Vertical tag strip on outer edge (desktop) */}
+                          <div
+                            className={`hidden lg:flex absolute top-6 ${
+                              isLeft ? "left-0" : "right-0"
+                            } items-center justify-center`}
+                          >
+                            <div
+                              className={`px-2 py-3 ${
+                                isLeft ? "rounded-r-md" : "rounded-l-md"
+                              }`}
+                              style={{
+                                background: s.bg,
+                                borderTop: `1px solid ${s.border}`,
+                                borderBottom: `1px solid ${s.border}`,
+                                borderRight: isLeft ? `1px solid ${s.border}` : "none",
+                                borderLeft: !isLeft ? `1px solid ${s.border}` : "none",
+                              }}
+                            >
+                              <span
+                                className="block text-[10px] font-mono font-bold tracking-[0.3em] uppercase"
+                                style={{
+                                  color: s.color,
+                                  writingMode: "vertical-rl",
+                                  transform: isLeft ? "rotate(180deg)" : "none",
+                                }}
+                              >
+                                {s.tag}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="relative p-7 lg:p-8 lg:px-12">
+                            {/* Header: Icon + mobile tag */}
+                            <div className="flex items-center gap-4 mb-6">
+                              <div
+                                className="w-14 h-14 rounded-2xl flex items-center justify-center border shrink-0"
+                                style={{
+                                  background: s.bg,
+                                  borderColor: s.border,
+                                  boxShadow: `0 0 30px ${s.color}40`,
+                                }}
+                              >
+                                <Icon
+                                  className="w-6 h-6"
+                                  style={{ color: s.color }}
+                                />
+                              </div>
+                              <div className="flex flex-col gap-0.5 lg:hidden">
+                                <span
+                                  className="text-[10px] font-mono font-bold tracking-widest uppercase"
+                                  style={{ color: s.color }}
+                                >
+                                  {index} · {s.tag}
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Title */}
+                            <h2 className="text-2xl lg:text-[1.65rem] font-bold text-white mb-3 leading-tight">
+                              {s.title}
+                            </h2>
+                            <div
+                              className="h-0.5 w-10 rounded-full mb-4"
+                              style={{ background: s.color }}
                             />
-                            {f}
-                          </li>
-                        ))}
-                      </ul>
+
+                            {/* Description */}
+                            <p className="text-white/55 leading-relaxed text-sm mb-6">
+                              {s.desc}
+                            </p>
+
+                            {/* Features — compact 2-col grid */}
+                            <div className="flex items-center gap-3 mb-3">
+                              <span
+                                className="text-[10px] font-mono font-semibold uppercase tracking-[0.2em]"
+                                style={{ color: s.color }}
+                              >
+                                Included
+                              </span>
+                              <div className="flex-1 h-px bg-white/5" />
+                            </div>
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-7">
+                              {s.features.map((f) => (
+                                <li
+                                  key={f}
+                                  className="flex items-start gap-2 text-xs text-white/70 leading-snug"
+                                >
+                                  <CheckCircle2
+                                    className="w-3.5 h-3.5 mt-0.5 shrink-0"
+                                    style={{ color: s.color }}
+                                  />
+                                  <span>{f}</span>
+                                </li>
+                              ))}
+                            </ul>
+
+                            {/* Footer: CTA + meta */}
+                            <div className="flex items-center justify-between gap-4 pt-5 border-t border-white/5">
+                              <Link
+                                href="/contact"
+                                className="group/cta inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200"
+                                style={{
+                                  background: s.bg,
+                                  color: s.color,
+                                  border: `1px solid ${s.border}`,
+                                }}
+                              >
+                                Start a project
+                                <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
+                              </Link>
+                              <span
+                                className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30"
+                              >
+                                {index} / {String(total).padStart(2, "0")}
+                              </span>
+                            </div>
+                          </div>
+                        </article>
+                      </AnimatedSection>
                     </div>
                   </div>
+                );
+              })}
+
+              {/* End cap on spine */}
+              <div className="relative">
+                <div className="absolute left-6 lg:left-1/2 -translate-x-1/2 -top-8">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[#4F8EF7] to-[#8B5CF6] shadow-[0_0_20px_rgba(139,92,246,0.6)]" />
                 </div>
-              </AnimatedSection>
-            );
-          })}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
+      <section className="py-20 relative">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <p className="text-sm font-semibold text-[#8B5CF6] uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs font-semibold uppercase tracking-widest text-[#8B5CF6] mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
               FAQ
-            </p>
+            </div>
             <h2 className="text-3xl lg:text-4xl font-bold">
               Common Questions
             </h2>
@@ -335,12 +538,17 @@ export default function ServicesPage() {
           <div className="flex flex-col gap-3">
             {faqs.map((faq, i) => (
               <AnimatedSection key={i} delay={i * 0.06}>
-                <details className="group glass border border-white/8 rounded-2xl overflow-hidden">
+                <details className="group glass border border-white/8 rounded-2xl overflow-hidden hover:border-white/15 transition-colors">
                   <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-medium text-sm hover:text-white/90 transition-colors">
-                    {faq.q}
+                    <span className="flex items-center gap-4">
+                      <span className="text-[11px] font-mono text-white/30 tabular-nums">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      {faq.q}
+                    </span>
                     <ChevronDown className="w-4 h-4 text-white/40 shrink-0 group-open:rotate-180 transition-transform duration-200" />
                   </summary>
-                  <div className="px-6 pb-5 text-sm text-white/55 leading-relaxed border-t border-white/5 pt-4">
+                  <div className="px-6 pb-5 text-sm text-white/55 leading-relaxed border-t border-white/5 pt-4 pl-14">
                     {faq.a}
                   </div>
                 </details>
@@ -351,8 +559,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24">
-        <AnimatedSection className="mx-auto max-w-3xl px-6 text-center">
+      <section className="py-24 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-30"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(79,142,247,0.15), transparent 60%)",
+          }}
+        />
+        <AnimatedSection className="relative mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Not Sure What You Need?
           </h2>
