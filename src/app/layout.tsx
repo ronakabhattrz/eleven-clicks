@@ -20,22 +20,6 @@ export const metadata: Metadata = {
   },
   description:
     "ElevenClicks is an Ontario IT company delivering Ruby on Rails apps, Node.js & Python backends, React web development, Android mobile apps, and custom AI solutions for Canadian businesses.",
-  keywords: [
-    "Ruby on Rails developer Ontario",
-    "Ruby on Rails development Canada",
-    "Node.js developer Ontario",
-    "Python developer Canada",
-    "web development Ontario",
-    "Android app development Canada",
-    "AI solutions Ontario",
-    "IT company Ontario Canada",
-    "website maintenance Canada",
-    "React Next.js developer Ontario",
-    "custom software development Ontario",
-    "mobile app development Ontario",
-    "AI chatbot development Canada",
-    "ElevenClicks",
-  ],
   authors: [{ name: "ElevenClicks", url: "https://elevenclicks.com" }],
   creator: "ElevenClicks",
   publisher: "ElevenClicks",
@@ -50,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ElevenClicks | Web, Mobile & AI Solutions",
+    title: "ElevenClicks | Ruby on Rails, Node.js, Web & AI Solutions — Ontario",
     description:
-      "Ontario IT company delivering web development, Android apps, and AI solutions for Canadian businesses.",
+      "Ontario IT company delivering Ruby on Rails, Node.js, Python, React web apps, Android mobile apps, and AI solutions for Canadian businesses.",
   },
   robots: {
     index: true,

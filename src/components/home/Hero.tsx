@@ -87,6 +87,9 @@ export default function Hero() {
               </span>
               <br />
               That Drive Results
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-white/30 mt-2 tracking-normal">
+                Ontario&apos;s IT Company
+              </span>
             </motion.h1>
 
             <motion.p

@@ -41,7 +41,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center group">
           <Image
             src="/menu-logo.png"
-            alt="ElevenClicks"
+            alt="ElevenClicks — Ontario IT Company"
             width={160}
             height={40}
             className="object-contain h-10 w-auto"

@@ -29,7 +29,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/menu-logo.png"
-                alt="ElevenClicks"
+                alt="ElevenClicks — Ontario IT Company"
                 width={140}
                 height={35}
                 className="object-contain h-9 w-auto"
