@@ -1,0 +1,48 @@
+# ElevenClicks — IT Company, Ontario, Canada
+
+ElevenClicks is a Canadian IT company based in Ontario that delivers custom web applications, Android and iOS mobile apps, website maintenance, and AI solutions for Canadian businesses. Founded in 2019. Contact: info@elevenclicks.com
+
+## What We Build
+
+- **Web Development** — Next.js, React, Ruby on Rails, Node.js, Python/Django/FastAPI web apps and SaaS platforms. E-commerce (Shopify, custom). API development (REST, GraphQL).
+- **Android & iOS Mobile Apps** — Native Android with Kotlin and Jetpack Compose; cross-platform with Flutter or React Native.
+- **Website Maintenance** — Plugin/CMS updates, daily backups, security monitoring, uptime monitoring, performance audits. Care plans for businesses that need reliable ongoing support.
+- **AI Solutions** — Custom AI integration using OpenAI GPT-4o, Anthropic Claude, Google Gemini. RAG pipelines, AI chatbots, automation, fine-tuning.
+- **Ruby on Rails** — New builds, legacy upgrades, SaaS products, REST APIs, Stripe marketplaces. Rails 6, 7, and 8.
+- **Node.js / TypeScript** — Scalable backends, real-time APIs, microservices.
+- **Python** — Web apps, automation scripts, data pipelines, ML integration.
+
+## Service Area
+
+Ontario, Canada and remote across Canada.
+
+## How We Work
+
+1. Free 30-minute discovery call
+2. Detailed proposal with scope and pricing within 48 hours
+3. Agile sprints with weekly check-ins
+4. Launch, deployment, and ongoing support
+
+## Key Pages
+
+- Homepage: https://elevenclicks.com
+- Services: https://elevenclicks.com/services
+- About: https://elevenclicks.com/about
+- Contact / Free Quote: https://elevenclicks.com/contact
+
+## Common Questions
+
+**How long does a website project take?**
+Marketing sites: 2–4 weeks. Web apps and e-commerce: 6–12 weeks.
+
+**Do you work with small businesses?**
+Yes — many clients are startups and small businesses. We match scope to budget.
+
+**What AI tools do you integrate?**
+OpenAI GPT-4o, Anthropic Claude, Google Gemini, and open-source models. We build RAG pipelines and connect AI to your existing data.
+
+**Do you do Ruby on Rails?**
+Yes, it is one of our core specialties — new builds, SaaS, APIs, and legacy upgrades.
+
+**How do I start?**
+Contact us at https://elevenclicks.com/contact for a free discovery call.

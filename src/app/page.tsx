@@ -102,6 +102,96 @@ const webSiteSchema = {
   inLanguage: "en-CA",
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Start a Project with ElevenClicks",
+  description: "A clear four-step process to launch your web, mobile, or AI project with ElevenClicks.",
+  totalTime: "PT2D",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Discovery Call",
+      text: "Book a free 30-minute call to discuss your goals, timeline, and budget. No sales pitch — just honest conversation.",
+      url: "https://elevenclicks.com/contact",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Proposal & Plan",
+      text: "Receive a detailed scope, transparent pricing, and a clear project timeline within 48 hours. No hidden fees.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Design & Build",
+      text: "Agile sprints with weekly check-ins so you see real progress every week.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Launch & Support",
+      text: "We handle deployment, testing, and handover. Post-launch support and iterations included.",
+    },
+  ],
+};
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What services does ElevenClicks offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ElevenClicks offers web development (Next.js, React, Ruby on Rails, Node.js, Python), Android and iOS mobile app development, website maintenance plans, and custom AI solutions for Canadian businesses.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is ElevenClicks located?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ElevenClicks is based in Ontario, Canada, and serves businesses across Canada remotely.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does web development cost at ElevenClicks?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pricing depends on scope. We provide a detailed proposal with transparent pricing within 48 hours of your discovery call. We work with startups and small businesses and match scope to budget.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does ElevenClicks do Ruby on Rails development?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — Ruby on Rails is one of ElevenClicks' core specialties. We build new Rails apps, maintain and upgrade legacy Rails applications, and develop SaaS products, APIs, and Stripe-integrated marketplaces with Rails 6, 7, and 8.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can ElevenClicks build AI solutions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. ElevenClicks integrates OpenAI GPT-4o, Anthropic Claude, and Google Gemini into custom applications. We build RAG pipelines, AI chatbots, and automation workflows connected to your existing data and tools.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I get a quote from ElevenClicks?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Visit https://elevenclicks.com/contact to book a free 30-minute discovery call. A detailed proposal with scope and pricing arrives within 48 hours.",
+      },
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
@@ -112,6 +202,14 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
       />
       <Hero />
       <ServicesPreview />

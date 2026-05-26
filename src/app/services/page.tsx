@@ -203,6 +203,100 @@ const faqs = [
   },
 ];
 
+const serviceListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "IT Services — ElevenClicks",
+  description: "Custom software development services offered by ElevenClicks in Ontario, Canada.",
+  url: "https://elevenclicks.com/services",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Service",
+        name: "Web Development",
+        description: "Next.js, React, Ruby on Rails, Node.js, and Python web applications and SaaS platforms for Canadian businesses.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#web",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Service",
+        name: "Website Maintenance",
+        description: "Ongoing care plans covering plugin updates, daily backups, security monitoring, uptime checks, and priority support.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#maintenance",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Service",
+        name: "Mobile App Development",
+        description: "Native Android (Kotlin), native iOS (Swift), and cross-platform Flutter applications from idea to App Store submission.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#mobile",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      item: {
+        "@type": "Service",
+        name: "AI Solutions",
+        description: "Custom AI integrations using OpenAI GPT-4o, Anthropic Claude, and Google Gemini — chatbots, RAG pipelines, and workflow automation.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#ai",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      item: {
+        "@type": "Service",
+        name: "Ruby on Rails Development",
+        description: "Full-stack Rails applications, SaaS products, REST APIs, Stripe integrations, and legacy Rails upgrades for Rails 6, 7, and 8.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#rails",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 6,
+      item: {
+        "@type": "Service",
+        name: "Node.js Development",
+        description: "High-throughput REST and GraphQL APIs, real-time services, and TypeScript-first backends with Node.js.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#nodejs",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 7,
+      item: {
+        "@type": "Service",
+        name: "Python Development",
+        description: "Django, FastAPI, and Flask web apps; data pipelines; ETL automation; and script automation for Canadian businesses.",
+        provider: { "@id": "https://elevenclicks.com/#organization" },
+        areaServed: { "@type": "Country", name: "Canada" },
+        url: "https://elevenclicks.com/services#python",
+      },
+    },
+  ],
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -227,6 +321,10 @@ export default function ServicesPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
