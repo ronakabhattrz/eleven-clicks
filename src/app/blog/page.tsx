@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { getPublishedPosts } from "@/lib/posts";
+
+export const revalidate = 3600; // revalidate every hour
 
 export const metadata: Metadata = {
   title: "Blog — Web Dev, AI & Mobile Insights | ElevenClicks",
@@ -24,40 +27,44 @@ const breadcrumbSchema = {
   ],
 };
 
-const posts = [
-  {
-    slug: "website-cost-canada-2025",
-    title: "How Much Does a Website Cost in Canada? (2025 Pricing Guide)",
-    excerpt:
-      "A clear breakdown of website development costs — from $1,500 landing pages to $40,000+ custom web apps. What drives price and how to get value for your budget.",
-    date: "Mar 15, 2025",
-    readTime: "8 min",
-    category: "Web Development",
-    color: "#4F8EF7",
-  },
-  {
-    slug: "ruby-on-rails-vs-nodejs-2025",
-    title: "Ruby on Rails vs Node.js in 2025: Which Backend for Your Project?",
-    excerpt:
-      "An honest comparison of Ruby on Rails and Node.js — when to use each, trade-offs in developer hiring, performance, and long-term cost of ownership.",
-    date: "Feb 20, 2025",
-    readTime: "10 min",
-    category: "Backend Development",
-    color: "#E53E3E",
-  },
-  {
-    slug: "ai-automation-small-business-canada",
-    title: "AI Automation for Canadian Small Businesses: A 2025 Practical Guide",
-    excerpt:
-      "Practical AI automation that actually works for small businesses in Canada — real use cases, honest costs, and how to get started without wasting money.",
-    date: "Apr 1, 2025",
-    readTime: "9 min",
-    category: "AI Solutions",
-    color: "#EC4899",
-  },
-];
+export default async function BlogPage() {
+  const dbPosts = await getPublishedPosts();
 
-export default function BlogPage() {
+  // Fallback static posts shown when DB is empty (before first AI run)
+  const staticPosts = [
+    {
+      slug: "website-cost-canada-2025",
+      title: "How Much Does a Website Cost in Canada? (2025 Pricing Guide)",
+      excerpt:
+        "A clear breakdown of website development costs — from $1,500 landing pages to $40,000+ custom web apps. What drives price and how to get value for your budget.",
+      published_at: "2025-03-15",
+      read_time: "8 min read",
+      category: "Web Development",
+      color: "#4F8EF7",
+    },
+    {
+      slug: "ruby-on-rails-vs-nodejs-2025",
+      title: "Ruby on Rails vs Node.js in 2025: Which Backend for Your Project?",
+      excerpt:
+        "An honest comparison of Ruby on Rails and Node.js — when to use each, trade-offs in developer hiring, performance, and long-term cost of ownership.",
+      published_at: "2025-02-20",
+      read_time: "10 min read",
+      category: "Backend Development",
+      color: "#E53E3E",
+    },
+    {
+      slug: "ai-automation-small-business-canada",
+      title: "AI Automation for Canadian Small Businesses: A 2025 Practical Guide",
+      excerpt:
+        "Practical AI automation that actually works for small businesses in Canada — real use cases, honest costs, and how to get started without wasting money.",
+      published_at: "2025-04-01",
+      read_time: "9 min read",
+      category: "AI Solutions",
+      color: "#EC4899",
+    },
+  ];
+
+  const posts = dbPosts.length > 0 ? dbPosts : staticPosts;
   return (
     <>
       <script
@@ -152,12 +159,12 @@ export default function BlogPage() {
                     <div className="flex items-center gap-3 text-xs text-white/30">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-3 h-3" />
-                        {post.date}
+                        {new Date(post.published_at).toLocaleDateString("en-CA", { year: "numeric", month: "short", day: "numeric" })}
                       </span>
                       <span className="w-px h-3 bg-white/10" />
                       <span className="flex items-center gap-1.5">
                         <Clock className="w-3 h-3" />
-                        {post.readTime}
+                        {post.read_time}
                       </span>
                     </div>
                     <span
