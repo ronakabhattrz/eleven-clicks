@@ -55,10 +55,10 @@ export default async function BlogPage({
             Blog &middot; Insights &amp; Guides
           </div>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-[#0f0f0f] mb-5">
-            Practical Guides for North American Businesses
+            Web, AI &amp; Mobile<br className="hidden sm:block" /> Insights
           </h1>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Honest advice on web development, AI automation, mobile apps, and technology strategy — written by the ElevenClicks team.
+            Honest advice on web development, AI automation, and mobile apps — written by the ElevenClicks team.
           </p>
         </div>
       </section>

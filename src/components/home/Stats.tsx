@@ -1,6 +1,6 @@
 const stats = [
   { value: "50+", label: "Projects Delivered" },
-  { value: "5 yrs", label: "In Business" },
+  { value: "7 yrs", label: "In Business" },
   { value: "6", label: "Specializations" },
   { value: "CA + US", label: "Coverage" },
 ];
@@ -13,7 +13,8 @@ export default function Stats() {
           {stats.map((s) => (
             <div key={s.label}>
               <p className="text-5xl font-bold text-white">{s.value}</p>
-              <p className="text-sm text-gray-500 mt-2 uppercase tracking-widest">{s.label}</p>
+              <div className="w-8 h-0.5 bg-indigo-600 mt-3 mb-2 rounded-full" />
+              <p className="text-sm text-gray-500 uppercase tracking-widest">{s.label}</p>
             </div>
           ))}
         </div>

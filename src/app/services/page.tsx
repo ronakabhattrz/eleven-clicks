@@ -399,8 +399,12 @@ export default function ServicesPage() {
                         </p>
                         <Link
                           href="/contact"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors text-white"
-                          style={{ background: s.color }}
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all border hover:opacity-80"
+                          style={{
+                            color: s.color,
+                            borderColor: `${s.color}50`,
+                            background: `${s.color}10`,
+                          }}
                         >
                           Start a project
                           <ArrowRight className="w-3.5 h-3.5" />

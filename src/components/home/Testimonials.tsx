@@ -158,16 +158,20 @@ export default function Testimonials() {
               <div className="flex items-center justify-between gap-3 mt-6 pt-6 border-t border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-[#4F46E5] font-bold text-sm shrink-0">
-                    {t.avatar}
+                    {t.upwork ? "★" : t.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">{t.name}</p>
-                    <p className="text-gray-400 text-xs">{t.role}</p>
+                    <p className="font-semibold text-gray-900 text-sm">
+                      {t.upwork ? "Verified Client" : t.name}
+                    </p>
+                    <p className="text-gray-400 text-xs">
+                      {t.upwork ? t.name : t.role}
+                    </p>
                   </div>
                 </div>
                 {t.upwork && (
                   <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-green-50 text-green-700 border border-green-200 shrink-0">
-                    Upwork
+                    Upwork ✓
                   </span>
                 )}
               </div>

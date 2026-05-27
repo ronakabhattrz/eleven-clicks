@@ -48,7 +48,7 @@ const stats = [
   { value: "2019", label: "Founded" },
   { value: "50+", label: "Projects Delivered" },
   { value: "6", label: "Team Members" },
-  { value: "🍁", label: "Ontario, Canada" },
+  { value: "CA", label: "Ontario, Canada" },
 ];
 
 export default function AboutPage() {
