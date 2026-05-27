@@ -11,7 +11,11 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
   if (!post) return {};
   return {
@@ -24,11 +28,22 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: post.meta_description || post.excerpt,
       type: "article",
       publishedTime: post.published_at,
+      authors: ["https://elevenclicks.com"],
+      siteName: "ElevenClicks",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.meta_title || post.title,
+      description: post.meta_description || post.excerpt,
     },
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getPostBySlug(params.slug);
   if (!post) notFound();
 
@@ -39,13 +54,24 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     description: post.excerpt,
     datePublished: post.published_at,
     dateModified: post.updated_at || post.published_at,
-    author: { "@type": "Organization", name: "ElevenClicks" },
-    publisher: {
+    author: {
       "@type": "Organization",
       name: "ElevenClicks",
       url: "https://elevenclicks.com",
     },
+    publisher: {
+      "@type": "Organization",
+      name: "ElevenClicks",
+      url: "https://elevenclicks.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://elevenclicks.com/logo.png",
+      },
+    },
     mainEntityOfPage: { "@type": "WebPage", "@id": post.canonical_url },
+    articleSection: post.category,
+    keywords: `${post.category}, web development, Ontario, Canada, IT company`,
+    inLanguage: "en-CA",
   };
 
   const breadcrumbSchema = {
@@ -60,8 +86,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
       {/* Hero */}
       <section className="relative pt-32 pb-16 overflow-hidden">
@@ -107,7 +139,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <div className="flex flex-wrap items-center gap-5 text-sm text-white/35 pb-8 border-b border-white/8">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
-              {new Date(post.published_at).toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" })}
+              {new Date(post.published_at).toLocaleDateString("en-CA", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-4 h-4" />
@@ -138,9 +174,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               className="w-10 h-0.5 rounded-full mx-auto mb-5"
               style={{ background: post.color }}
             />
-            <h3 className="text-xl font-bold text-white mb-3">Ready to work with ElevenClicks?</h3>
+            <h3 className="text-xl font-bold text-white mb-3">
+              Ready to work with ElevenClicks?
+            </h3>
             <p className="text-white/50 text-sm mb-6 max-w-md mx-auto">
-              We help Ontario businesses build websites, apps, and AI solutions that actually work.
+              We help businesses across Canada and North America build websites, apps, and AI solutions that actually work.
             </p>
             <Link
               href="/#contact"
