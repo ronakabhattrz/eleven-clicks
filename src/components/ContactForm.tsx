@@ -61,16 +61,16 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#4F8EF7]/60 focus:bg-white/8 transition-all duration-200";
+    "w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-[#0f0f0f] placeholder-gray-400 focus:outline-none focus:border-[#4F46E5] focus:ring-1 focus:ring-[#4F46E5]/20 transition-all duration-200";
 
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center text-center py-16 gap-4">
-        <div className="w-16 h-16 rounded-full bg-[#10B981]/15 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center">
           <CheckCircle2 className="w-8 h-8 text-[#10B981]" />
         </div>
-        <h3 className="text-xl font-bold text-white">Message Received!</h3>
-        <p className="text-white/55 max-w-sm text-sm leading-relaxed">
+        <h3 className="text-xl font-bold text-[#0f0f0f]">Message Received!</h3>
+        <p className="text-gray-500 max-w-sm text-sm leading-relaxed">
           Thanks for reaching out! We&apos;ll review your message and get back to
           you within 1 business day.
         </p>
@@ -79,7 +79,7 @@ export default function ContactForm() {
             setStatus("idle");
             setForm({ name: "", email: "", service: "", budget: "", message: "" });
           }}
-          className="mt-2 text-sm text-[#4F8EF7] hover:text-white transition-colors"
+          className="mt-2 text-sm text-[#4F46E5] hover:text-[#4338CA] transition-colors"
         >
           Send another message
         </button>
@@ -92,8 +92,8 @@ export default function ContactForm() {
       {/* Name + Email */}
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-medium text-white/50 mb-1.5">
-            Full Name <span className="text-[#4F8EF7]">*</span>
+          <label className="block text-xs font-medium text-gray-500 mb-1.5">
+            Full Name <span className="text-[#4F46E5]">*</span>
           </label>
           <input
             name="name"
@@ -105,8 +105,8 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-xs font-medium text-white/50 mb-1.5">
-            Email Address <span className="text-[#4F8EF7]">*</span>
+          <label className="block text-xs font-medium text-gray-500 mb-1.5">
+            Email Address <span className="text-[#4F46E5]">*</span>
           </label>
           <input
             name="email"
@@ -122,7 +122,7 @@ export default function ContactForm() {
 
       {/* Service */}
       <div>
-        <label className="block text-xs font-medium text-white/50 mb-1.5">
+        <label className="block text-xs font-medium text-gray-500 mb-1.5">
           Service Interested In
         </label>
         <select
@@ -131,18 +131,16 @@ export default function ContactForm() {
           onChange={update}
           className={`${inputClass} appearance-none`}
         >
-          <option value="" className="bg-[#0D0D1A]">Select a service…</option>
+          <option value="">Select a service…</option>
           {SERVICES.map((s) => (
-            <option key={s} value={s} className="bg-[#0D0D1A]">
-              {s}
-            </option>
+            <option key={s} value={s}>{s}</option>
           ))}
         </select>
       </div>
 
       {/* Budget */}
       <div>
-        <label className="block text-xs font-medium text-white/50 mb-1.5">
+        <label className="block text-xs font-medium text-gray-500 mb-1.5">
           Project Budget
         </label>
         <select
@@ -151,19 +149,17 @@ export default function ContactForm() {
           onChange={update}
           className={`${inputClass} appearance-none`}
         >
-          <option value="" className="bg-[#0D0D1A]">Select a budget range…</option>
+          <option value="">Select a budget range…</option>
           {BUDGETS.map((b) => (
-            <option key={b} value={b} className="bg-[#0D0D1A]">
-              {b}
-            </option>
+            <option key={b} value={b}>{b}</option>
           ))}
         </select>
       </div>
 
       {/* Message */}
       <div>
-        <label className="block text-xs font-medium text-white/50 mb-1.5">
-          Tell Us About Your Project <span className="text-[#4F8EF7]">*</span>
+        <label className="block text-xs font-medium text-gray-500 mb-1.5">
+          Tell Us About Your Project <span className="text-[#4F46E5]">*</span>
         </label>
         <textarea
           name="message"
@@ -177,7 +173,7 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+        <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">
           <AlertCircle className="w-4 h-4 shrink-0" />
           {errorMsg}
         </div>
@@ -186,7 +182,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white font-semibold text-base hover:opacity-90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#4F46E5] text-white font-semibold text-sm hover:bg-[#4338CA] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? (
           <>

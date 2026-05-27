@@ -17,26 +17,12 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header
-      className={clsx(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
-          : "bg-transparent"
-      )}
-    >
+    <header className="fixed top-0 inset-x-0 z-50 bg-[#0f0f0f]">
       <nav className="mx-auto max-w-7xl px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
@@ -59,8 +45,8 @@ export default function Navbar() {
                 className={clsx(
                   "text-sm font-medium transition-colors duration-200",
                   pathname === href
-                    ? "text-gray-900 font-semibold"
-                    : "text-gray-600 hover:text-gray-900"
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
                 )}
               >
                 {label}
@@ -82,7 +68,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 transition-colors"
+          className="md:hidden p-2 rounded-lg text-white/60 hover:text-white transition-colors"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -91,14 +77,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-[#0f0f0f] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className={clsx(
                 "text-base font-medium py-1",
-                pathname === href ? "text-gray-900 font-semibold" : "text-gray-600 hover:text-gray-900"
+                pathname === href ? "text-white" : "text-white/60 hover:text-white"
               )}
             >
               {label}
