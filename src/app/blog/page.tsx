@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { getPublishedPosts } from "@/lib/posts";
 
-export const revalidate = 3600; // revalidate every hour
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog — Web Dev, AI & Mobile Insights | ElevenClicks",

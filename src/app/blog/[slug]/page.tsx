@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { getPostBySlug, getPublishedPosts } from "@/lib/posts";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   const posts = await getPublishedPosts();
