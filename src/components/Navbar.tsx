@@ -33,7 +33,7 @@ export default function Navbar() {
       className={clsx(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "glass border-b border-white/5 shadow-lg shadow-black/20"
+          ? "bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm"
           : "bg-transparent"
       )}
     >
@@ -59,8 +59,8 @@ export default function Navbar() {
                 className={clsx(
                   "text-sm font-medium transition-colors duration-200",
                   pathname === href
-                    ? "text-white"
-                    : "text-white/50 hover:text-white"
+                    ? "text-gray-900 font-semibold"
+                    : "text-gray-600 hover:text-gray-900"
                 )}
               >
                 {label}
@@ -73,7 +73,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="relative px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white hover:opacity-90 transition-opacity duration-200"
+            className="bg-[#4F46E5] text-white rounded-lg px-5 py-2 text-sm font-semibold hover:bg-[#4338CA] transition-colors"
           >
             Get a Quote
           </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 rounded-lg text-white/70 hover:text-white transition-colors"
+          className="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 transition-colors"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -91,14 +91,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden glass border-t border-white/5 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className={clsx(
                 "text-base font-medium py-1",
-                pathname === href ? "text-white" : "text-white/60 hover:text-white"
+                pathname === href ? "text-gray-900 font-semibold" : "text-gray-600 hover:text-gray-900"
               )}
             >
               {label}
@@ -106,7 +106,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-2 text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white text-sm font-semibold"
+            className="mt-2 text-center bg-[#4F46E5] text-white rounded-lg px-5 py-2.5 text-sm font-semibold hover:bg-[#4338CA] transition-colors"
           >
             Get a Quote
           </Link>

@@ -96,17 +96,11 @@ export default async function BlogPostPage({
       />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#050510]" />
-        <div
-          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[140px] pointer-events-none opacity-15"
-          style={{ background: `radial-gradient(circle, ${post.color} 0%, transparent 70%)` }}
-        />
-        <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
+      <section className="bg-white pt-32 pb-16">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to blog
@@ -125,7 +119,7 @@ export default async function BlogPostPage({
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight mb-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0f0f0f] leading-tight mb-5">
             {post.title}
           </h1>
 
@@ -134,9 +128,9 @@ export default async function BlogPostPage({
             style={{ background: `linear-gradient(90deg, ${post.color}, transparent)` }}
           />
 
-          <p className="text-lg text-white/55 leading-relaxed mb-8">{post.excerpt}</p>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">{post.excerpt}</p>
 
-          <div className="flex flex-wrap items-center gap-5 text-sm text-white/35 pb-8 border-b border-white/8">
+          <div className="flex flex-wrap items-center gap-5 text-sm text-gray-400 pb-8 border-b border-gray-100">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
               {new Date(post.published_at).toLocaleDateString("en-CA", {
@@ -158,7 +152,7 @@ export default async function BlogPostPage({
       </section>
 
       {/* Content */}
-      <section className="pb-24">
+      <section className="bg-white pb-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <div
             className="article-prose"
@@ -166,24 +160,17 @@ export default async function BlogPostPage({
           />
 
           {/* CTA */}
-          <div
-            className="mt-16 p-8 rounded-3xl glass border text-center"
-            style={{ borderColor: `${post.color}25` }}
-          >
-            <div
-              className="w-10 h-0.5 rounded-full mx-auto mb-5"
-              style={{ background: post.color }}
-            />
-            <h3 className="text-xl font-bold text-white mb-3">
+          <div className="mt-16 p-8 rounded-3xl bg-[#4F46E5] text-white text-center">
+            <div className="w-10 h-0.5 rounded-full mx-auto mb-5 bg-indigo-300" />
+            <h3 className="text-xl font-bold mb-3">
               Ready to work with ElevenClicks?
             </h3>
-            <p className="text-white/50 text-sm mb-6 max-w-md mx-auto">
+            <p className="text-indigo-200 text-sm mb-6 max-w-md mx-auto">
               We help businesses across Canada and North America build websites, apps, and AI solutions that actually work.
             </p>
             <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:-translate-y-0.5"
-              style={{ background: post.color }}
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-white text-[#4F46E5] hover:bg-indigo-50 transition-colors"
             >
               Get a free consultation
             </Link>
@@ -192,7 +179,7 @@ export default async function BlogPostPage({
           <div className="mt-10">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to blog
