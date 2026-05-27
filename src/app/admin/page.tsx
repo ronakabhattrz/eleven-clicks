@@ -9,6 +9,7 @@ export default function AdminPage() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
+  const [genProgress, setGenProgress] = useState("");
   const [genResult, setGenResult] = useState<{ created: number; total: number } | null>(null);
 
   async function loadPosts() {
@@ -36,20 +37,33 @@ export default function AdminPage() {
     loadPosts();
   }
 
+  const CATEGORIES = [
+    "Web Development", "Ruby on Rails", "AI Solutions",
+    "Mobile Development", "Node.js & Python", "IT & Digital Strategy",
+  ];
+
   async function handleGenerate() {
-    if (!confirm("Generate 1 article per category (6 total)? This takes ~30 seconds.")) return;
+    if (!confirm("Generate 10 articles per category (60 total)? This takes 2–3 minutes.")) return;
     setGenerating(true);
     setGenResult(null);
-    try {
-      const res = await fetch("/api/generate-articles", { method: "POST" });
-      const data = await res.json();
-      setGenResult({ created: data.created, total: data.total });
-      loadPosts();
-    } catch {
-      setGenResult({ created: 0, total: 6 });
-    } finally {
-      setGenerating(false);
+    let totalCreated = 0;
+    for (let i = 0; i < CATEGORIES.length; i++) {
+      const cat = CATEGORIES[i];
+      setGenProgress(`${cat} (${i + 1}/${CATEGORIES.length})…`);
+      try {
+        const res = await fetch("/api/generate-articles", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ category: cat }),
+        });
+        const data = await res.json();
+        totalCreated += data.created ?? 0;
+      } catch { /* continue to next category */ }
     }
+    setGenResult({ created: totalCreated, total: 60 });
+    setGenProgress("");
+    setGenerating(false);
+    loadPosts();
   }
 
   return (
@@ -70,7 +84,7 @@ export default function AdminPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#EC4899]/40 bg-[#EC4899]/10 text-[#EC4899] text-sm font-semibold hover:bg-[#EC4899]/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {generating ? (
-                <><Loader2 className="w-4 h-4 animate-spin" /> Generating…</>
+                <><Loader2 className="w-4 h-4 animate-spin" /> {genProgress || "Starting…"}</>
               ) : (
                 <><Sparkles className="w-4 h-4" /> Generate Articles</>
               )}
