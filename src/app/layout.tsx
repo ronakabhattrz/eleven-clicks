@@ -58,7 +58,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-CA" className={inter.variable}>
-      <body className="bg-white text-[#0f0f0f] antialiased">
+      <body className="bg-[#050510] text-white antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

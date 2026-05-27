@@ -17,12 +17,26 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-[#0f0f0f]">
+    <header
+      className={clsx(
+        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+        scrolled
+          ? "glass border-b border-white/5 shadow-lg shadow-black/20"
+          : "bg-transparent"
+      )}
+    >
       <nav className="mx-auto max-w-7xl px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
@@ -46,7 +60,7 @@ export default function Navbar() {
                   "text-sm font-medium transition-colors duration-200",
                   pathname === href
                     ? "text-white"
-                    : "text-white/60 hover:text-white"
+                    : "text-white/50 hover:text-white"
                 )}
               >
                 {label}
@@ -59,7 +73,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="bg-[#4F46E5] text-white rounded-lg px-5 py-2 text-sm font-semibold hover:bg-[#4338CA] transition-colors"
+            className="relative px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white hover:opacity-90 transition-opacity duration-200"
           >
             Get a Quote
           </Link>
@@ -68,7 +82,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 rounded-lg text-white/60 hover:text-white transition-colors"
+          className="md:hidden p-2 rounded-lg text-white/70 hover:text-white transition-colors"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -77,7 +91,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#0f0f0f] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden glass border-t border-white/5 px-6 py-4 flex flex-col gap-4">
           {links.map(({ href, label }) => (
             <Link
               key={href}
@@ -92,7 +106,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-2 text-center bg-[#4F46E5] text-white rounded-lg px-5 py-2.5 text-sm font-semibold hover:bg-[#4338CA] transition-colors"
+            className="mt-2 text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white text-sm font-semibold"
           >
             Get a Quote
           </Link>
