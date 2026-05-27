@@ -1,20 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Sparkles, Loader2 } from "lucide-react";
 import type { Post } from "@/lib/supabase";
 import LogoutButton from "@/components/admin/LogoutButton";
 
 export default function AdminPage() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [generating, setGenerating] = useState(false);
+  const [genResult, setGenResult] = useState<{ created: number; total: number } | null>(null);
 
   async function loadPosts() {
     setLoading(true);
     const res = await fetch("/api/posts", { cache: "no-store" });
-    if (res.ok) {
-      const data = await res.json();
-      setPosts(data);
-    }
+    if (res.ok) setPosts(await res.json());
     setLoading(false);
   }
 
@@ -36,18 +36,45 @@ export default function AdminPage() {
     loadPosts();
   }
 
+  async function handleGenerate() {
+    if (!confirm("Generate 1 article per category (6 total)? This takes ~30 seconds.")) return;
+    setGenerating(true);
+    setGenResult(null);
+    try {
+      const res = await fetch("/api/generate-articles", { method: "POST" });
+      const data = await res.json();
+      setGenResult({ created: data.created, total: data.total });
+      loadPosts();
+    } catch {
+      setGenResult({ created: 0, total: 6 });
+    } finally {
+      setGenerating(false);
+    }
+  }
+
   return (
     <div className="min-h-screen pt-28 pb-20 px-6">
       <div className="mx-auto max-w-5xl">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-3">
           <div>
             <h1 className="text-2xl font-bold text-white">Blog CMS</h1>
             <p className="text-sm text-white/40 mt-1">
               {loading ? "Loading…" : `${posts.length} posts total`}
             </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap justify-end">
+            <button
+              onClick={handleGenerate}
+              disabled={generating}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#EC4899]/40 bg-[#EC4899]/10 text-[#EC4899] text-sm font-semibold hover:bg-[#EC4899]/20 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {generating ? (
+                <><Loader2 className="w-4 h-4 animate-spin" /> Generating…</>
+              ) : (
+                <><Sparkles className="w-4 h-4" /> Generate Articles</>
+              )}
+            </button>
             <Link
               href="/admin/posts/new"
               className="px-4 py-2 rounded-xl bg-[#4F8EF7] text-white text-sm font-semibold hover:bg-[#4F8EF7]/80 transition"
@@ -57,6 +84,22 @@ export default function AdminPage() {
             <LogoutButton />
           </div>
         </div>
+
+        {/* Generation result banner */}
+        {genResult && (
+          <div className={`mb-6 px-5 py-3 rounded-xl text-sm font-medium flex items-center justify-between ${
+            genResult.created === genResult.total
+              ? "bg-emerald-500/10 border border-emerald-500/20 text-emerald-400"
+              : "bg-amber-500/10 border border-amber-500/20 text-amber-400"
+          }`}>
+            <span>
+              {genResult.created === genResult.total
+                ? `✓ All ${genResult.created} articles generated and published successfully.`
+                : `${genResult.created} of ${genResult.total} articles created. Some may have failed — check Supabase.`}
+            </span>
+            <button onClick={() => setGenResult(null)} className="text-white/30 hover:text-white ml-4">✕</button>
+          </div>
+        )}
 
         {/* Table */}
         <div className="glass border border-white/8 rounded-2xl overflow-hidden">
@@ -72,7 +115,7 @@ export default function AdminPage() {
             <div className="px-5 py-12 text-center text-white/30 text-sm">Loading posts…</div>
           ) : posts.length === 0 ? (
             <div className="px-5 py-12 text-center text-white/30 text-sm">
-              No posts yet. Click &quot;+ New Post&quot; to create one.
+              No posts yet. Click &quot;+ New Post&quot; or &quot;Generate Articles&quot;.
             </div>
           ) : (
             posts.map((post) => (
@@ -101,10 +144,7 @@ export default function AdminPage() {
                   {post.status}
                 </button>
                 <div className="flex items-center justify-end gap-3">
-                  <Link
-                    href={`/admin/posts/${post.id}/edit`}
-                    className="text-xs text-[#4F8EF7] hover:underline"
-                  >
+                  <Link href={`/admin/posts/${post.id}/edit`} className="text-xs text-[#4F8EF7] hover:underline">
                     Edit
                   </Link>
                   <button
