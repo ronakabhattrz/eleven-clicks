@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,6 +65,25 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
+        {/* Google Analytics — elevenclicks.com */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GFTHP8H0R6"
+          strategy="afterInteractive"
+        />
+        {/* Google Analytics — elevenclicks.ca */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VTPHHRWZQR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GFTHP8H0R6');
+            gtag('config', 'G-VTPHHRWZQR');
+          `}
+        </Script>
       </body>
     </html>
   );
