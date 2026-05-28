@@ -167,26 +167,41 @@ export default async function BlogPostPage({
 
           {/* CTA */}
           <div
-            className="mt-16 p-8 rounded-3xl glass border text-center"
+            className="mt-16 rounded-3xl glass border overflow-hidden"
             style={{ borderColor: `${post.color}25` }}
           >
-            <div
-              className="w-10 h-0.5 rounded-full mx-auto mb-5"
-              style={{ background: post.color }}
-            />
-            <h3 className="text-xl font-bold text-white mb-3">
-              Ready to work with ElevenClicks?
-            </h3>
-            <p className="text-white/50 text-sm mb-6 max-w-md mx-auto">
-              We help businesses across Canada and North America build websites, apps, and AI solutions that actually work.
-            </p>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:-translate-y-0.5"
-              style={{ background: post.color }}
-            >
-              Get a free consultation
-            </Link>
+            <div className="h-0.5 w-full" style={{ background: `linear-gradient(90deg, ${post.color}, transparent 60%)` }} />
+            <div className="p-8 text-center">
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5"
+                style={{ background: `${post.color}18`, color: post.color, border: `1px solid ${post.color}30` }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: post.color }} />
+                Free Consultation
+              </span>
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Working on something similar?
+              </h3>
+              <p className="text-white/50 text-sm mb-6 max-w-md mx-auto leading-relaxed">
+                ElevenClicks helps Canadian businesses build {post.category.toLowerCase()} solutions that actually work. Book a free 30-minute call — no pitch, just honest advice.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:opacity-90"
+                  style={{ background: post.color }}
+                >
+                  Book a Free 30-Min Call
+                </Link>
+                <a
+                  href="mailto:info@elevenclicks.com"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white/60 hover:text-white transition-colors glass border border-white/10"
+                >
+                  info@elevenclicks.com
+                </a>
+              </div>
+              <p className="text-white/30 text-xs mt-4">Ontario-based · Canadian timezone · No offshore handoffs</p>
+            </div>
           </div>
 
           <div className="mt-10">
