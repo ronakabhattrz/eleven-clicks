@@ -12,11 +12,12 @@ const services = [
 ];
 
 const company = [
-  { label: "Home",    href: "/" },
-  { label: "About",   href: "/about" },
-  { label: "Services",href: "/services" },
-  { label: "Blog",    href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home",         href: "/" },
+  { label: "About",        href: "/about" },
+  { label: "Services",     href: "/services" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog",         href: "/blog" },
+  { label: "Contact",      href: "/contact" },
 ];
 
 export default function Footer() {
