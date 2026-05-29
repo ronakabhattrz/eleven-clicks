@@ -27,7 +27,13 @@
       "Bash(cat next.config.ts)",
       "Bash(cat next.config.mjs)",
       "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/ruby-on-rails\")",
-      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/ai-automation\")"
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/ai-automation\")",
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/web-app-development\")",
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/mobile-app-development\")",
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/nodejs-python\")",
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/industries/healthcare\")",
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/industries/ecommerce\")",
+      "Bash(python3)"
     ],
     "additionalDirectories": [
       "/Volumes/Ronak Data/projects/personal/it-company ",

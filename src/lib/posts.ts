@@ -55,3 +55,14 @@ export async function deletePost(id: string): Promise<boolean> {
   const { error } = await supabaseAdmin.from("posts").delete().eq("id", id);
   return !error;
 }
+
+export async function getPostsByCategory(category: string): Promise<Post[]> {
+  const { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("status", "published")
+    .eq("category", category)
+    .order("published_at", { ascending: false });
+  if (error) { console.error(error); return []; }
+  return data ?? [];
+}
