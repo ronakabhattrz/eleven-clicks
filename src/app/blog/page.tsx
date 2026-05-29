@@ -87,11 +87,12 @@ export default async function BlogPage({
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {posts.map((post) => (
-                <Link
+                <div
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
                   className="group relative glass border border-white/8 rounded-3xl overflow-hidden flex flex-col hover:border-white/18 hover:-translate-y-1 transition-all duration-300 card-shine"
                 >
+                  {/* Main card link — covers the whole card */}
+                  <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-0" aria-label={post.title} />
                   <div
                     className="h-0.5 w-full shrink-0"
                     style={{ background: `linear-gradient(90deg, ${post.color}, transparent 70%)` }}
@@ -102,10 +103,10 @@ export default async function BlogPage({
                   />
                   <div className="relative flex flex-col flex-1 p-7">
                     <div className="mb-4">
+                      {/* Category link sits above the card overlay */}
                       <Link
                         href={`/blog/categories/${categorySlug[post.category] ?? "web-development"}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
+                        className="relative z-10 inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
                         style={{
                           background: `${post.color}18`,
                           color: post.color,
@@ -142,7 +143,7 @@ export default async function BlogPage({
                       </span>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           )}
