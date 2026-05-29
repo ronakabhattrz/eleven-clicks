@@ -91,8 +91,6 @@ export default async function BlogPage({
                   key={post.slug}
                   className="group relative glass border border-white/8 rounded-3xl overflow-hidden flex flex-col hover:border-white/18 hover:-translate-y-1 transition-all duration-300 card-shine"
                 >
-                  {/* Main card link — covers the whole card */}
-                  <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-0" aria-label={post.title} />
                   <div
                     className="h-0.5 w-full shrink-0"
                     style={{ background: `linear-gradient(90deg, ${post.color}, transparent 70%)` }}
@@ -103,10 +101,9 @@ export default async function BlogPage({
                   />
                   <div className="relative flex flex-col flex-1 p-7">
                     <div className="mb-4">
-                      {/* Category link sits above the card overlay */}
                       <Link
                         href={`/blog/categories/${categorySlug[post.category] ?? "web-development"}`}
-                        className="relative z-10 inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
+                        className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
                         style={{
                           background: `${post.color}18`,
                           color: post.color,
@@ -116,11 +113,13 @@ export default async function BlogPage({
                         {post.category}
                       </Link>
                     </div>
-                    <h2 className="text-[1.05rem] font-bold text-white leading-snug mb-3">
-                      {post.title}
-                    </h2>
-                    <div className="h-px w-8 rounded-full mb-4 shrink-0" style={{ background: post.color }} />
-                    <p className="text-sm text-white/50 leading-relaxed flex-1 mb-6">{post.excerpt}</p>
+                    <Link href={`/blog/${post.slug}`} className="block flex-1">
+                      <h2 className="text-[1.05rem] font-bold text-white leading-snug mb-3">
+                        {post.title}
+                      </h2>
+                      <div className="h-px w-8 rounded-full mb-4 shrink-0" style={{ background: post.color }} />
+                      <p className="text-sm text-white/50 leading-relaxed mb-6">{post.excerpt}</p>
+                    </Link>
                     <div className="flex items-center justify-between gap-3 pt-4 border-t border-white/5">
                       <div className="flex items-center gap-3 text-xs text-white/30">
                         <span className="flex items-center gap-1.5">
@@ -135,12 +134,13 @@ export default async function BlogPage({
                           {post.read_time}
                         </span>
                       </div>
-                      <span
+                      <Link
+                        href={`/blog/${post.slug}`}
                         className="inline-flex items-center gap-1 text-xs font-semibold group-hover:gap-2 transition-all duration-200"
                         style={{ color: post.color }}
                       >
                         Read <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
+                      </Link>
                     </div>
                   </div>
                 </div>
