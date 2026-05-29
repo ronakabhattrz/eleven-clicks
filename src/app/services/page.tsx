@@ -657,6 +657,155 @@ export default function ServicesPage() {
       </section>
 
       {/* Bottom CTA */}
+      {/* Fixed-Price Packages */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 pointer-events-none opacity-20"
+          style={{ background: "radial-gradient(ellipse at center, rgba(139,92,246,0.2), transparent 60%)" }}
+        />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs font-semibold uppercase tracking-widest text-[#8B5CF6] mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+              Simple Pricing
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Fixed Prices. No Surprises.
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto">
+              Three ways to get started with ElevenClicks — every package comes with a fixed price, clear scope, and a Canadian team you can actually reach.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Package 1 */}
+            <AnimatedSection delay={0}>
+              <div className="glass border border-white/8 rounded-3xl p-8 flex flex-col h-full hover:border-[#4F8EF7]/30 transition-colors group">
+                <div className="w-11 h-11 rounded-xl bg-[#4F8EF7]/10 border border-[#4F8EF7]/20 flex items-center justify-center mb-5">
+                  <Globe className="w-5 h-5 text-[#4F8EF7]" />
+                </div>
+                <p className="text-xs font-mono font-bold tracking-widest uppercase text-[#4F8EF7] mb-2">Starter Website</p>
+                <p className="text-4xl font-bold text-white mb-1">$3,500 <span className="text-lg font-normal text-white/40">CAD</span></p>
+                <p className="text-xs text-white/30 mb-5">One-time · Fixed price</p>
+                <div className="h-px bg-white/8 mb-5" />
+                <ul className="flex flex-col gap-3 flex-1 mb-8">
+                  {[
+                    "Up to 6 pages",
+                    "Mobile-responsive design",
+                    "Contact form + CMS",
+                    "SEO-ready from day one",
+                    "Google Analytics setup",
+                    "2 rounds of revisions",
+                    "30-day post-launch support",
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/60">
+                      <CheckCircle2 className="w-4 h-4 text-[#4F8EF7] shrink-0 mt-0.5" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://calendly.com/elevenclicks-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center py-3 rounded-full text-sm font-semibold text-white border border-[#4F8EF7]/30 bg-[#4F8EF7]/10 hover:bg-[#4F8EF7]/20 transition-colors"
+                >
+                  Book a Call to Start
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Package 2 — featured */}
+            <AnimatedSection delay={0.1}>
+              <div className="relative glass border border-[#8B5CF6]/40 rounded-3xl p-8 flex flex-col h-full">
+                <div className="absolute top-0 left-0 right-0 h-0.5 rounded-t-3xl"
+                  style={{ background: "linear-gradient(90deg, #8B5CF6, #EC4899, transparent)" }}
+                />
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] text-white">
+                    Most Popular
+                  </span>
+                </div>
+                <div className="w-11 h-11 rounded-xl bg-[#EC4899]/10 border border-[#EC4899]/20 flex items-center justify-center mb-5">
+                  <Brain className="w-5 h-5 text-[#EC4899]" />
+                </div>
+                <p className="text-xs font-mono font-bold tracking-widest uppercase text-[#EC4899] mb-2">AI Business Audit</p>
+                <p className="text-4xl font-bold text-white mb-1">$997 <span className="text-lg font-normal text-white/40">CAD</span></p>
+                <p className="text-xs text-white/30 mb-5">One-time · Fixed price</p>
+                <div className="h-px bg-white/8 mb-5" />
+                <ul className="flex flex-col gap-3 flex-1 mb-8">
+                  {[
+                    "2-hour strategy session",
+                    "Full business workflow review",
+                    "AI opportunity mapping",
+                    "Custom automation roadmap",
+                    "ROI estimate per use case",
+                    "Written report + action plan",
+                    "First right to implement",
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/60">
+                      <CheckCircle2 className="w-4 h-4 text-[#EC4899] shrink-0 mt-0.5" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://calendly.com/elevenclicks-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] hover:opacity-90 transition-opacity"
+                >
+                  Book Your Audit
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Package 3 */}
+            <AnimatedSection delay={0.2}>
+              <div className="glass border border-white/8 rounded-3xl p-8 flex flex-col h-full hover:border-[#06B6D4]/30 transition-colors group">
+                <div className="w-11 h-11 rounded-xl bg-[#06B6D4]/10 border border-[#06B6D4]/20 flex items-center justify-center mb-5">
+                  <Wrench className="w-5 h-5 text-[#06B6D4]" />
+                </div>
+                <p className="text-xs font-mono font-bold tracking-widest uppercase text-[#06B6D4] mb-2">Monthly Maintenance</p>
+                <p className="text-4xl font-bold text-white mb-1">$299 <span className="text-lg font-normal text-white/40">CAD/mo</span></p>
+                <p className="text-xs text-white/30 mb-5">Recurring · Cancel anytime</p>
+                <div className="h-px bg-white/8 mb-5" />
+                <ul className="flex flex-col gap-3 flex-1 mb-8">
+                  {[
+                    "Plugin & CMS updates",
+                    "Daily automated backups",
+                    "Security monitoring",
+                    "Uptime monitoring + alerts",
+                    "Monthly performance report",
+                    "Priority email support",
+                    "1 hour of content updates/mo",
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/60">
+                      <CheckCircle2 className="w-4 h-4 text-[#06B6D4] shrink-0 mt-0.5" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://calendly.com/elevenclicks-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center py-3 rounded-full text-sm font-semibold text-white border border-[#06B6D4]/30 bg-[#06B6D4]/10 hover:bg-[#06B6D4]/20 transition-colors"
+                >
+                  Get Started
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={0.3}>
+            <p className="text-center text-sm text-white/30 mt-8">
+              Need something custom? <a href="https://calendly.com/elevenclicks-info/30min" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white underline transition-colors">Book a free call</a> and we&apos;ll scope it together.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
       <section className="py-24 relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-30"
@@ -673,13 +822,15 @@ export default function ServicesPage() {
             Book a free 30-minute discovery call and we&apos;ll help you figure
             out the right solution for your goals and budget.
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="https://calendly.com/elevenclicks-info/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white font-semibold hover:opacity-90 transition-opacity"
           >
-            Book a Free Call
+            Book a Free 30-Min Call
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </AnimatedSection>
       </section>
     </>
