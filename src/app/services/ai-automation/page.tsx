@@ -222,7 +222,7 @@ export default function AIAutomationPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">What Could Your Business Automate?</h2>
-          <p className="text-white/50 mb-8">Book a free 30-minute call. We'll map out exactly what's automatable in your business, what it would cost, and what you'd save.</p>
+          <p className="text-white/50 mb-8">Book a free 30-minute call. We&apos;ll map out exactly what&apos;s automatable in your business, what it would cost, and what you&apos;d save.</p>
           <a
             href="https://calendly.com/elevenclicks-info/30min"
             target="_blank"

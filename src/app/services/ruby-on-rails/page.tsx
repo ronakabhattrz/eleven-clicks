@@ -143,7 +143,7 @@ export default function RubyOnRailsPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Why Ruby on Rails for Your Canadian Business?</h2>
               <div className="space-y-4 text-white/60 text-sm leading-relaxed">
-                <p>Rails has been the backbone of thousands of successful SaaS products — Shopify, GitHub, and Basecamp were all built on it. It's not a new framework chasing trends; it's a proven, mature platform optimised for shipping real products quickly.</p>
+                <p>Rails has been the backbone of thousands of successful SaaS products — Shopify, GitHub, and Basecamp were all built on it. It&apos;s not a new framework chasing trends; it&apos;s a proven, mature platform optimised for shipping real products quickly.</p>
                 <p>For Canadian SMBs and startups, Rails offers a major advantage: you get to production faster than almost any other framework. Convention over configuration means less time debating architecture and more time shipping features your customers care about.</p>
                 <p>At ElevenClicks, our lead developers have been building Rails applications since Rails 4. We know the framework deeply — including where the sharp edges are and how to avoid them.</p>
               </div>
@@ -189,7 +189,7 @@ export default function RubyOnRailsPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Build Your Rails Application?</h2>
-          <p className="text-white/50 mb-8">Book a free 30-minute call. We'll scope your project, give you an honest timeline, and send a fixed-price proposal within 48 hours.</p>
+          <p className="text-white/50 mb-8">Book a free 30-minute call. We&apos;ll scope your project, give you an honest timeline, and send a fixed-price proposal within 48 hours.</p>
           <a
             href="https://calendly.com/elevenclicks-info/30min"
             target="_blank"
