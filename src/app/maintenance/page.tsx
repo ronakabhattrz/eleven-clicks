@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   CheckCircle2, ArrowRight, Shield, Clock, Zap,
   RefreshCw, Bell, HeadphonesIcon, BarChart3, FileText,
@@ -101,8 +100,8 @@ export default function MaintenancePage() {
               Website Maintenance · Ontario, Canada
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
-              Your Website,<br />
-              <span className="text-gradient">Always Running.</span>
+              Website Maintenance<br />
+              <span className="text-gradient">Plans for Canadian SMBs</span>
             </h1>
             <p className="text-lg text-white/55 leading-relaxed mb-8 max-w-xl">
               One flat monthly fee. No surprises. We handle the updates, backups, security, and support so you never have to think about your website going down.

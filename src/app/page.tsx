@@ -9,14 +9,20 @@ import Testimonials from "@/components/home/Testimonials";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "ElevenClicks | Ruby on Rails, Node.js, Web & AI Solutions — Ontario",
+  title: "Web Development Company Toronto | Ruby on Rails, AI & Mobile | ElevenClicks",
   description:
-    "ElevenClicks builds Ruby on Rails apps, Node.js & Python backends, React websites, Android mobile apps, and AI solutions for Canadian businesses. Get a free quote today.",
+    "Ontario IT company building custom web apps, Ruby on Rails platforms, and AI automation for Canadian small businesses. Fixed-price projects from $3,500 CAD. Free 30-min consultation.",
   alternates: {
     canonical: "https://elevenclicks.com",
+    languages: { "en-CA": "https://elevenclicks.com" },
   },
   openGraph: {
     url: "https://elevenclicks.com",
+    title: "Web Development Company Toronto | ElevenClicks",
+    description: "Custom web apps, Ruby on Rails, AI automation and mobile apps for Canadian SMBs. Ontario-based, fixed-price, senior developers only.",
+    siteName: "ElevenClicks",
+    locale: "en_CA",
+    type: "website",
   },
 };
 

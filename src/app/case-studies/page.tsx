@@ -162,8 +162,8 @@ export default function CaseStudiesPage() {
             Case Studies · Real Projects
           </div>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight mb-5">
-            Real Work.{" "}
-            <span className="text-gradient">Real Results.</span>
+            Web &amp; AI Case Studies{" "}
+            <span className="text-gradient">— Canadian Businesses</span>
           </h1>
           <p className="text-lg text-white/50 max-w-2xl mx-auto">
             Every project below is a real engagement with a Canadian business. Here is what the problem was, what we built, and what changed.
