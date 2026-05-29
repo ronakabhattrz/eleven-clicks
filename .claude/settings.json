@@ -33,14 +33,16 @@
       "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/services/nodejs-python\")",
       "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/industries/healthcare\")",
       "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/industries/ecommerce\")",
-      "Bash(python3)"
+      "Bash(python3)",
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/resources/pipeda-checklist\")"
     ],
     "additionalDirectories": [
       "/Volumes/Ronak Data/projects/personal/it-company ",
       "/Volumes/Ronak Data/projects/personal/it-company /src/app",
       "/Volumes/Ronak Data/projects/personal/it-company /src/components",
       "/Volumes/Ronak Data/projects/personal/it-company /.next",
-      "/Volumes/Ronak Data/projects/personal/it-company /marketing"
+      "/Volumes/Ronak Data/projects/personal/it-company /marketing",
+      "/Volumes/Ronak Data/projects/personal/it-company /src/app/resources"
     ]
   }
 }

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | ElevenClicks",
+  description: "Privacy policy for ElevenClicks — Ontario IT company. How we collect, use, and protect your personal information in compliance with PIPEDA.",
   alternates: { canonical: "https://elevenclicks.com/privacy" },
+  robots: { index: true, follow: false },
 };
 
 export default function PrivacyPage() {

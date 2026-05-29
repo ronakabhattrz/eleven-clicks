@@ -52,6 +52,33 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": "https://elevenclicks.com/#organization",
+  name: "ElevenClicks",
+  url: "https://elevenclicks.com",
+  logo: "https://elevenclicks.com/menu-logo.png",
+  email: "info@elevenclicks.com",
+  foundingDate: "2019",
+  description: "Ontario IT company building custom web apps, Ruby on Rails platforms, mobile apps, and AI automation for Canadian small businesses.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Toronto",
+    addressRegion: "ON",
+    addressCountry: "CA",
+  },
+  areaServed: [
+    { "@type": "City", name: "Toronto" },
+    { "@type": "AdministrativeArea", name: "Ontario" },
+    { "@type": "Country", name: "Canada" },
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/elevenclicks",
+    "https://clutch.co/profile/elevenclicks",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -60,6 +87,10 @@ export default function RootLayout({
   return (
     <html lang="en-CA" className={inter.variable}>
       <body className="bg-[#050510] text-white antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

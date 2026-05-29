@@ -3,12 +3,12 @@ import Image from "next/image";
 import { MapPin, Mail } from "lucide-react";
 
 const services = [
-  { label: "Web Development",    href: "/services#web" },
-  { label: "Ruby on Rails",      href: "/services#rails" },
-  { label: "Node.js & Python",   href: "/services#nodejs" },
-  { label: "Android Mobile Apps",href: "/services#mobile" },
-  { label: "AI Solutions",       href: "/services#ai" },
-  { label: "Website Maintenance",href: "/services#maintenance" },
+  { label: "Web App Development",    href: "/services/web-app-development" },
+  { label: "Ruby on Rails",          href: "/services/ruby-on-rails" },
+  { label: "AI Automation",          href: "/services/ai-automation" },
+  { label: "Mobile App Development", href: "/services/mobile-app-development" },
+  { label: "Node.js & Python",       href: "/services/nodejs-python" },
+  { label: "Website Maintenance",    href: "/maintenance" },
 ];
 
 const company = [
@@ -20,11 +20,18 @@ const company = [
   { label: "Contact",      href: "/contact" },
 ];
 
+const industries = [
+  { label: "Healthcare",  href: "/industries/healthcare" },
+  { label: "E-Commerce",  href: "/industries/ecommerce" },
+  { label: "Toronto",     href: "/toronto" },
+  { label: "Maintenance", href: "/maintenance" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-[#050510]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -66,6 +73,20 @@ export default function Footer() {
                     href={href}
                     className="text-sm text-white/45 hover:text-white transition-colors"
                   >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h3 className="text-sm font-semibold text-white mb-5">Industries</h3>
+            <ul className="flex flex-col gap-3">
+              {industries.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-white/45 hover:text-white transition-colors">
                     {label}
                   </Link>
                 </li>
