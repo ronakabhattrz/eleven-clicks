@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Smartphone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development Toronto — iOS, Android & Flutter | ElevenClicks",
+  title: "Mobile App Development Toronto — iOS, Android & Flutter",
   description:
     "iOS and Android mobile app development in Toronto. Native Swift, Kotlin, and Flutter apps for Canadian businesses. Fixed-price, App Store to launch. Free consultation.",
   alternates: { canonical: "https://elevenclicks.com/services/mobile-app-development" },

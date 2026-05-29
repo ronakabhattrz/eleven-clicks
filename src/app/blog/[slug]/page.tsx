@@ -4,6 +4,15 @@ import Link from "next/link";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { getPostBySlug, getPublishedPosts } from "@/lib/posts";
 
+const categorySlug: Record<string, string> = {
+  "Web Development":      "web-development",
+  "Ruby on Rails":        "ruby-on-rails",
+  "AI Solutions":         "ai-solutions",
+  "Mobile Development":   "mobile-development",
+  "Node.js & Python":     "nodejs-python",
+  "IT & Digital Strategy":"it-strategy",
+};
+
 export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
@@ -113,8 +122,9 @@ export default async function BlogPostPage({
           </Link>
 
           <div className="mb-5">
-            <span
-              className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest"
+            <Link
+              href={`/blog/categories/${categorySlug[post.category] ?? "web-development"}`}
+              className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
               style={{
                 background: `${post.color}18`,
                 color: post.color,
@@ -122,7 +132,7 @@ export default async function BlogPostPage({
               }}
             >
               {post.category}
-            </span>
+            </Link>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight mb-5">

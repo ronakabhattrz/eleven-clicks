@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Code2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Ruby on Rails Development Company Toronto | ElevenClicks",
+  title: "Ruby on Rails Development Company Toronto",
   description:
     "Experienced Ruby on Rails developer in Toronto, Ontario. Custom Rails apps, SaaS platforms, REST APIs, and legacy upgrades. Fixed-price projects for Canadian businesses.",
   alternates: { canonical: "https://elevenclicks.com/services/ruby-on-rails" },

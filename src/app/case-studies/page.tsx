@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Real Projects, Real Results | ElevenClicks",
+  title: "Case Studies — Real Projects, Real Results",
   description:
     "See how ElevenClicks has helped Canadian businesses build web apps, mobile apps, and AI solutions that deliver measurable results. Ontario IT company.",
   alternates: { canonical: "https://elevenclicks.com/case-studies" },

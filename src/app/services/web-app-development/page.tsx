@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Web App Development Toronto | Next.js & React | ElevenClicks",
+  title: "Custom Web App Development Toronto | Next.js & React",
   description:
     "Custom web application development in Toronto. Next.js, React, and full-stack web apps for Canadian small businesses. Fixed-price, Ontario-based senior developers.",
   alternates: { canonical: "https://elevenclicks.com/services/web-app-development" },

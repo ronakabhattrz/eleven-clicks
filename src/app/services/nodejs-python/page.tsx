@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Code2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Node.js & Python Development Company Canada | ElevenClicks",
+  title: "Node.js & Python Development Company Canada",
   description:
     "Node.js and Python backend development for Canadian businesses. REST APIs, automation scripts, data pipelines, and scalable backends. Ontario-based, fixed-price projects.",
   alternates: { canonical: "https://elevenclicks.com/services/nodejs-python" },

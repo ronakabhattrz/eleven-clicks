@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Healthcare Software Development Canada — PIPEDA Compliant | ElevenClicks",
+  title: "Healthcare Software Development Canada — PIPEDA Compliant",
   description:
     "Custom healthcare software development for Canadian clinics and health businesses. PIPEDA-compliant apps, patient intake systems, and clinic management tools. Ontario-based IT company.",
   alternates: { canonical: "https://elevenclicks.com/industries/healthcare" },

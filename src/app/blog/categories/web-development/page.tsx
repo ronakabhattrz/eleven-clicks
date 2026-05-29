@@ -6,7 +6,7 @@ import { getPostsByCategory } from "@/lib/posts";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Web Development Articles for Canadian Businesses | ElevenClicks Blog",
+  title: "Web Development Articles for Canadian Businesses",
   description: "Practical web development guides for Canadian small businesses — website costs, platform comparisons, and how-to guides from the ElevenClicks team in Ontario.",
   alternates: { canonical: "https://elevenclicks.com/blog/categories/web-development" },
 };

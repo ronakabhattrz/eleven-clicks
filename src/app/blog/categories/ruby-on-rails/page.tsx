@@ -6,7 +6,7 @@ import { getPostsByCategory } from "@/lib/posts";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Ruby on Rails Articles for Canadian Businesses | ElevenClicks Blog",
+  title: "Ruby on Rails Articles for Canadian Businesses",
   description: "Ruby on Rails guides for Canadian businesses and developers — when to use Rails, what it costs, and how it compares to other frameworks.",
   alternates: { canonical: "https://elevenclicks.com/blog/categories/ruby-on-rails" },
 };

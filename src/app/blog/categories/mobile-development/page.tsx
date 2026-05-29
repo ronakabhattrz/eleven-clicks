@@ -6,7 +6,7 @@ import { getPostsByCategory } from "@/lib/posts";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Mobile Development Articles for Canadian Businesses | ElevenClicks Blog",
+  title: "Mobile Development Articles for Canadian Businesses",
   description: "Mobile app guides for Canadian businesses — iOS vs Android, costs, timelines, and what to expect from app development.",
   alternates: { canonical: "https://elevenclicks.com/blog/categories/mobile-development" },
 };

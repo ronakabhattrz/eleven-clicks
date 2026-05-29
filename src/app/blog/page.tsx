@@ -3,10 +3,19 @@ import Link from "next/link";
 import { Calendar, Clock, ArrowRight, ArrowLeft } from "lucide-react";
 import { getPublishedPosts } from "@/lib/posts";
 
+const categorySlug: Record<string, string> = {
+  "Web Development":       "web-development",
+  "Ruby on Rails":         "ruby-on-rails",
+  "AI Solutions":          "ai-solutions",
+  "Mobile Development":    "mobile-development",
+  "Node.js & Python":      "nodejs-python",
+  "IT & Digital Strategy": "it-strategy",
+};
+
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blog — Web Dev, AI & Mobile Insights | ElevenClicks",
+  title: "Blog — Web Dev, AI & Mobile Insights",
   description:
     "Practical guides on web development, Ruby on Rails, AI automation, and mobile apps for Canadian and North American businesses.",
   alternates: { canonical: "https://elevenclicks.com/blog" },
@@ -93,8 +102,10 @@ export default async function BlogPage({
                   />
                   <div className="relative flex flex-col flex-1 p-7">
                     <div className="mb-4">
-                      <span
-                        className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest"
+                      <Link
+                        href={`/blog/categories/${categorySlug[post.category] ?? "web-development"}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
                         style={{
                           background: `${post.color}18`,
                           color: post.color,
@@ -102,7 +113,7 @@ export default async function BlogPage({
                         }}
                       >
                         {post.category}
-                      </span>
+                      </Link>
                     </div>
                     <h2 className="text-[1.05rem] font-bold text-white leading-snug mb-3">
                       {post.title}

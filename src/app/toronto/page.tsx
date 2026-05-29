@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Web Development Company Toronto | ElevenClicks — Ontario IT Team",
+  title: "Web Development Company Toronto — Ontario IT Team",
   description:
     "Toronto web development, mobile app, and AI solutions from ElevenClicks. Ontario-based team serving Toronto businesses — get a free quote in 24 hours.",
   keywords: [

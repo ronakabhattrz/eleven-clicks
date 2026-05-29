@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Brain } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Automation & Chatbots for Small Business Canada | ElevenClicks",
+  title: "AI Automation & Chatbots for Small Business Canada",
   description:
     "Custom AI chatbots, workflow automation, and RAG pipelines for Canadian small businesses. Reduce manual work, cut support costs, and automate repetitive tasks. Ontario-based team.",
   alternates: { canonical: "https://elevenclicks.com/services/ai-automation" },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, ShoppingBag } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "E-Commerce Web Development Toronto — Custom & Shopify | ElevenClicks",
+  title: "E-Commerce Web Development Toronto — Custom & Shopify",
   description:
     "Custom e-commerce development for Canadian retailers. Shopify customization, Next.js stores, and conversion-optimized online shops. Toronto-based IT company, fixed-price projects.",
   alternates: { canonical: "https://elevenclicks.com/industries/ecommerce" },

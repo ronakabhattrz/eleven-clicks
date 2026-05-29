@@ -6,7 +6,7 @@ import { getPostsByCategory } from "@/lib/posts";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "AI Solutions Articles for Canadian Businesses | ElevenClicks Blog",
+  title: "AI Solutions Articles for Canadian Businesses",
   description: "AI automation guides for Canadian small businesses — chatbots, workflow automation, and AI tools explained in plain English.",
   alternates: { canonical: "https://elevenclicks.com/blog/categories/ai-solutions" },
 };

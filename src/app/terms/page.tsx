@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ElevenClicks",
+  title: "Terms of Service",
   description: "Terms of service for ElevenClicks — Ontario IT company. Terms governing web development, mobile app, and AI solution projects.",
   alternates: { canonical: "https://elevenclicks.com/terms" },
   robots: { index: true, follow: false },

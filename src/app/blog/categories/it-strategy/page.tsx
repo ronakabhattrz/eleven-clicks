@@ -6,7 +6,7 @@ import { getPostsByCategory } from "@/lib/posts";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "IT & Digital Strategy Articles for Canadian Businesses | ElevenClicks Blog",
+  title: "IT & Digital Strategy Articles for Canadian Businesses",
   description: "Digital strategy guides for Canadian small businesses — cloud costs, software decisions, cybersecurity basics, and IT planning.",
   alternates: { canonical: "https://elevenclicks.com/blog/categories/it-strategy" },
 };

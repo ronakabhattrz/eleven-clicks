@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Website Maintenance Plans — $299/month | ElevenClicks",
+  title: "Website Maintenance Plans — $299/month",
   description:
     "Keep your website fast, secure, and up-to-date with ElevenClicks' monthly maintenance plan. $299 CAD/month. Ontario-based team, same-day response, cancel anytime.",
   alternates: { canonical: "https://elevenclicks.com/maintenance" },

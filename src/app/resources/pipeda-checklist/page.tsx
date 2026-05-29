@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight, Shield, AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "PIPEDA Compliance Checklist for Canadian Small Businesses (2026) | ElevenClicks",
+  title: "PIPEDA Compliance Checklist for Canadian Small Businesses (2026)",
   description:
     "Free PIPEDA compliance checklist for Ontario and Canadian small businesses. 10-point checklist covering consent, data storage, breach response, and website requirements.",
   alternates: { canonical: "https://elevenclicks.com/resources/pipeda-checklist" },
