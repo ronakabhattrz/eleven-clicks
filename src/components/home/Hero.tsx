@@ -115,12 +115,14 @@ export default function Hero() {
                 Start Your Project
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/services"
+              <a
+                href="https://calendly.com/elevenclicks-info/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/10 text-white/80 font-semibold text-base hover:border-white/30 hover:text-white transition-all duration-200 glass"
               >
-                View Our Services
-              </Link>
+                Book a Free Call
+              </a>
             </motion.div>
 
             {/* Inline stat strip */}

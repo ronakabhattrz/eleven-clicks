@@ -30,13 +30,15 @@ export default function CtaBanner() {
                 consultation with our team today.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/contact"
+                <a
+                  href="https://calendly.com/elevenclicks-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#4F8EF7] to-[#8B5CF6] text-white font-semibold text-base hover:opacity-90 transition-all duration-200"
                 >
-                  Get a Free Quote
+                  Book a Free 30-Min Call
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
                 <Link
                   href="/services"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/15 text-white/80 font-semibold text-base hover:border-white/30 hover:text-white transition-all duration-200"

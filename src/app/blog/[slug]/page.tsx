@@ -186,13 +186,15 @@ export default async function BlogPostPage({
                 ElevenClicks helps Canadian businesses build {post.category.toLowerCase()} solutions that actually work. Book a free 30-minute call — no pitch, just honest advice.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link
-                  href="/contact"
+                <a
+                  href="https://calendly.com/elevenclicks-info/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:opacity-90"
                   style={{ background: post.color }}
                 >
                   Book a Free 30-Min Call
-                </Link>
+                </a>
                 <a
                   href="mailto:info@elevenclicks.com"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white/60 hover:text-white transition-colors glass border border-white/10"
