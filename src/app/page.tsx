@@ -9,9 +9,9 @@ import Testimonials from "@/components/home/Testimonials";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Web Development Company Toronto | Ruby on Rails, AI & Mobile | ElevenClicks",
+  title: "Web Development Toronto | Rails, AI & Mobile | ElevenClicks",
   description:
-    "Ontario IT company building custom web apps, Ruby on Rails platforms, and AI automation for Canadian small businesses. Fixed-price projects from $3,500 CAD. Free 30-min consultation.",
+    "Ontario IT company building custom web apps, Ruby on Rails platforms, and AI automation for Canadian businesses. Fixed-price projects from $3,500 CAD.",
   alternates: {
     canonical: "https://elevenclicks.com",
     languages: { "en-CA": "https://elevenclicks.com" },
