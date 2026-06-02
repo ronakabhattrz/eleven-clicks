@@ -58,7 +58,7 @@ export default function Footer() {
                 className="flex items-center gap-2 hover:text-white/70 transition-colors"
               >
                 <Mail className="w-4 h-4 shrink-0 text-[#8B5CF6]" />
-                info@elevenclicks.com
+                Send us an email
               </a>
             </div>
           </div>

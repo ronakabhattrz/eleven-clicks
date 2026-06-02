@@ -1,0 +1,19 @@
+# Google Disavow File — elevenclicks.com
+# Generated: 2026-06-02
+# Upload at: https://search.google.com/search-console/disavow-links
+
+# Spam link farms / backlink exchange schemes
+domain:bitcoinmix.biz
+domain:backlinkup.co
+domain:backlinks-checker.com
+
+# Automated domain report scrapers
+domain:wants.cfd
+domain:takes.sbs
+domain:quero.party
+domain:bye.fyi
+domain:drjack.world
+domain:byteshort.xyz
+
+# URL shortener auto-listers
+domain:urls-shortener.eu
