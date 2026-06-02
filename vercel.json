@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.elevenclicks.com" }],
+      "destination": "https://elevenclicks.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/app-ads.txt",
