@@ -34,7 +34,10 @@
       "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/industries/healthcare\")",
       "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/industries/ecommerce\")",
       "Bash(python3)",
-      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/resources/pipeda-checklist\")"
+      "Bash(mkdir -p \"/Volumes/Ronak Data/projects/personal/it-company /src/app/resources/pipeda-checklist\")",
+      "Bash(git -C \"/Volumes/Ronak Data/projects/personal/it-company\" status)",
+      "Bash(git -C \"/Volumes/Ronak Data/projects/personal/it-company\" log --oneline -3)",
+      "Bash(lsof -iTCP -sTCP:LISTEN -n -P)"
     ],
     "additionalDirectories": [
       "/Volumes/Ronak Data/projects/personal/it-company ",
